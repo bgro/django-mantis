@@ -26,7 +26,7 @@ INTERNAL_IPS = ('127.0.0.1',)
 
 INSTALLED_APPS = tuple(INSTALLED_APPS_list
                        + ['debug_toolbar']
-                       + ['devel'] ## auto-create test root user on syncdb
+                       #+ ['devel'] ## auto-create test root user on syncdb
                        + ['south'])
 
 # Add loggers
