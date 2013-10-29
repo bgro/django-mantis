@@ -2,11 +2,12 @@
 # After the first "pip install -r", just run "pip freeze" and add the version
 # to each package in each requirements/*.txt.
 
-django
+docutils==0.10
 
-django-model-utils
+Django==1.6
+django-simple-menu==1.0.6
+South==0.7.6
 
-psycopg2
-South
+django-dingos==0.1.0
+django-mantis-core==0.1.0
 
-Pillow
