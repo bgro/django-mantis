@@ -230,7 +230,8 @@ GRAPPELLI_ADMIN_TITLE = "MANTIS Cyber Threat Info Management"
 
 # DINGOS
 
-DINGOS = {'OWN_ORGANIZATION_ID_NAMESPACE': 'own.organization.com'}
+DINGOS = {'OWN_ORGANIZATION_ID_NAMESPACE': 'own.organization.com',
+          'BLOB_ROOT' : root('blobs')}
 
 # MANTIS
 

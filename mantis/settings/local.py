@@ -31,12 +31,12 @@ INSTALLED_APPS = tuple(INSTALLED_APPS_list
 
 # Add loggers
 
-LOGGING['loggers']['mantis_openioc_import.importer'] =  {
+LOGGING['loggers']['mantis_openioc_importer.importer'] =  {
     'handlers': ['console'],
     'level': 'INFO',
     'propagate': True,
     }
-LOGGING['loggers']['mantis_stix_import.importer'] =  {
+LOGGING['loggers']['mantis_stix_importer.importer'] =  {
     'handlers': ['console'],
     'level': 'INFO',
     'propagate': True,
