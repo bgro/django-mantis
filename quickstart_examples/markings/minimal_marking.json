@@ -1,0 +1,7 @@
+{"Mechanism" : {"Category":"Commandline Import",
+    "User": "DINGO[_username]",
+    "Commandline": {"Command":"DINGO[_command]",
+        "KeywordArguments":"DINGO[_kargs]",
+        "Arguments":"DINGO[_args]"}
+},
+    "Source" : "DINGO[source]"}
