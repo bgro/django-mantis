@@ -31,26 +31,35 @@ INSTALLED_APPS = tuple(INSTALLED_APPS_list
 
 # Add loggers
 
+CONSOLE_LOGLEVEL = 'INFO'
+
 LOGGING['loggers']['mantis_openioc_importer.importer'] =  {
     'handlers': ['console'],
-    'level': 'INFO',
+    'level': CONSOLE_LOGLEVEL,
     'propagate': True,
     }
 LOGGING['loggers']['mantis_stix_importer.importer'] =  {
     'handlers': ['console'],
-    'level': 'DEBUG',
+    'level': CONSOLE_LOGLEVEL,
     'propagate': True,
     }
 
 LOGGING['loggers']['dingos.models'] =  {
     'handlers': ['console'],
-    'level': 'DEBUG',
+    'level': CONSOLE_LOGLEVEL,
     'propagate': True,
     }
 
+LOGGING['loggers']['dingos.import_handling'] =  {
+    'handlers': ['console'],
+    'level': CONSOLE_LOGLEVEL,
+    'propagate': True,
+    }
+
+
 LOGGING['loggers']['dingos.core.datastructures'] =  {
     'handlers': ['console'],
-    'level': 'DEBUG',
+    'level': CONSOLE_LOGLEVEL,
     'propagate': True,
     }
 
