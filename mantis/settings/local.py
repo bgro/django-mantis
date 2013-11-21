@@ -38,12 +38,19 @@ LOGGING['loggers']['mantis_openioc_importer.importer'] =  {
     }
 LOGGING['loggers']['mantis_stix_importer.importer'] =  {
     'handlers': ['console'],
-    'level': 'INFO',
+    'level': 'DEBUG',
     'propagate': True,
     }
-LOGGING['loggers']['dingos.import_handling'] =  {
+
+LOGGING['loggers']['dingos.models'] =  {
     'handlers': ['console'],
-    'level': 'INFO',
+    'level': 'DEBUG',
+    'propagate': True,
+    }
+
+LOGGING['loggers']['dingos.core.datastructures'] =  {
+    'handlers': ['console'],
+    'level': 'DEBUG',
     'propagate': True,
     }
 

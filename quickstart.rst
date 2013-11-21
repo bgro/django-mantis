@@ -32,6 +32,12 @@ try out the following:
   Start with Mandiant_APT1_Report.xml: that goes relatively fast;
   Appendix_G_IOCs_Full.xml will take about 20 minutes or so to import.
 
+  **ATTENTION**: The import of large files takes quite a bit of memory (probably there is a memory leak
+  somewhere, which will be ironed out in a future release). Be sure to give the system/virtual machine
+  you are running the import of ``Appendix_G_IOCs_Full.xml`` on a fair amount of memory (4 GB definitely
+  works).
+
+
 - Start the server (if the quickstart-script has not started it already for you)
   with 
 
