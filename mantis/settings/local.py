@@ -31,37 +31,45 @@ INSTALLED_APPS = tuple(INSTALLED_APPS_list
 
 # Add loggers
 
-CONSOLE_LOGLEVEL = 'INFO'
+STANDARD_CONSOLE_LOGLEVEL = 'INFO'
 
-LOGGING['loggers']['mantis_openioc_importer.importer'] =  {
+LOGGING['loggers']['dingos'] =  {
     'handlers': ['console'],
-    'level': CONSOLE_LOGLEVEL,
-    'propagate': True,
-    }
-LOGGING['loggers']['mantis_stix_importer.importer'] =  {
-    'handlers': ['console'],
-    'level': CONSOLE_LOGLEVEL,
+    'level': STANDARD_CONSOLE_LOGLEVEL,
     'propagate': True,
     }
 
-LOGGING['loggers']['dingos.models'] =  {
+LOGGING['loggers']['mantis'] =  {
     'handlers': ['console'],
-    'level': CONSOLE_LOGLEVEL,
-    'propagate': True,
-    }
-
-LOGGING['loggers']['dingos.import_handling'] =  {
-    'handlers': ['console'],
-    'level': CONSOLE_LOGLEVEL,
+    'level': STANDARD_CONSOLE_LOGLEVEL,
     'propagate': True,
     }
 
 
-LOGGING['loggers']['dingos.core.datastructures'] =  {
+LOGGING['loggers']['mantis_openioc_importer'] =  {
     'handlers': ['console'],
-    'level': CONSOLE_LOGLEVEL,
+    'level': STANDARD_CONSOLE_LOGLEVEL,
     'propagate': True,
     }
+
+LOGGING['loggers']['mantis_stix_importer'] =  {
+    'handlers': ['console'],
+    'level': STANDARD_CONSOLE_LOGLEVEL,
+    'propagate': True,
+    }
+
+LOGGING['loggers']['mantis_iodef_importer'] =  {
+    'handlers': ['console'],
+    'level': STANDARD_CONSOLE_LOGLEVEL,
+    'propagate': True,
+    }
+
+LOGGING['loggers']['mantis_taxii'] =  {
+    'handlers': ['console'],
+    'level': STANDARD_CONSOLE_LOGLEVEL,
+    'propagate': True,
+    }
+
 
 
 ADMINS = (

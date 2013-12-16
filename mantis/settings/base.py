@@ -160,6 +160,7 @@ INSTALLED_APPS_list = [
     'mantis_openioc_importer',
     'mantis_stix_importer',
     'mantis_iodef_importer',
+    #'mantis_misp_importer',
     # Uncomment below to include TAXII SERVICES and YETI from MITRE's
     # TAXII PoC implementation YETI
     'taxii_services',
