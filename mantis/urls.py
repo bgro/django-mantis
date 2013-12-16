@@ -26,7 +26,7 @@ urlpatterns = patterns('',
                        url(r'^mantis/', include('dingos.urls')),
 
                        # Uncomment below to include URLs of MITRE's Yeti PoC app
-                       url(r'^taxii/', include('yeti.urls')),
+                       #url(r'^taxii/', include('yeti.urls')),
 
                        ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
