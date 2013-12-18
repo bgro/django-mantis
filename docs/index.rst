@@ -6,16 +6,15 @@
 Welcome to MANTIS's documentation!
 ==================================
 
+Blah
+
 Contents:
 
 .. toctree::
    :maxdepth: 2
 
-   install
-   deploy
-   tests
-
-
+   screenshots
+   installation
 
 Indices and tables
 ==================

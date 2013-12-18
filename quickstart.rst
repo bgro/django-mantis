@@ -2,15 +2,17 @@
 QUICKSTART
 ===================================================================================
 
-After running 
+In the ``django-mantis`` folder, do the following:
 
- bash quickstart.sh (for easy demo usage with sqlite)
+- For easy demo usage with SQLite, do::
 
-or
+     (mantis)$ bash quickstart.sh 
 
- bash quickstart_psql (for usage with exisiting and configured postgresql database)
+- For usage with exisiting and configured postgresql database, do::
 
-try out the following:
+     (mantis)$  bash quickstart_psql 
+
+Then try out the following:
 
 - Download: http://stix.mitre.org/downloads/APT1-STIX.zip and extract the files
 
@@ -18,12 +20,14 @@ try out the following:
   the following:
 
   - If you are using postgresql::
+
       python manage.py mantis_stix_import --settings=mantis.settings.local_psql  --trace\
           --marking_json=quickstart_examples/markings/minimal_marking.json\
           --marking_pfill=source "Mandiant APT 1 Report"\
           <file_path>
 
   - If you are using sqllite::
+
       python manage.py mantis_stix_import --settings=mantis.settings.local  --trace\
           --marking_json=quickstart_examples/markings/minimal_marking.json\
           --marking_pfill=source "Mandiant APT 1 Report"\
@@ -53,19 +57,20 @@ try out the following:
  
  - Browse to::   
    
-      127.0.0.1:8000/mantis/View/InfoObject
+        127.0.0.1:8000/mantis/View/InfoObject
 
   and start looking around:
 
-  - Select a filter for "stix.mitre.org:STIX_Package"
+  - Select a filter for ``stix.mitre.org:STIX_Package``
     in the filter box in the top-right corner. 
 
-  - This will show you all STIX_Package
-    objects that are in the system (two, if you imported both Mandiant_APT1_Report
-    and Appendix_G_IOC_Full.xml). 
+  - This will show you all ``STIX_Package``
+    objects that are in the system (two, if you imported both ``Mandiant_APT1_Report.xml``
+    and ``Appendix_G_IOC_Full.xml``). 
 
   - Click on one of the two objects and start
-    exploring.
+    exploring (have a look at the screenshots in the documentation for
+    a quick guide through the application.)
 
 
 

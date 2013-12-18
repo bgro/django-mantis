@@ -16,7 +16,7 @@ TEMPLATE_STRING_IF_INVALID = "INVALID EXPRESSION: '%s'"
 # Add debug toolbar
 #
 
-MIDDLEWARE_CLASSES_list.append('debug_toolbar.middleware.DebugToolbarMiddleware')
+#MIDDLEWARE_CLASSES_list.append('debug_toolbar.middleware.DebugToolbarMiddleware')
 
 MIDDLEWARE_CLASSES = tuple(MIDDLEWARE_CLASSES_list)
 
@@ -25,7 +25,7 @@ MIDDLEWARE_CLASSES = tuple(MIDDLEWARE_CLASSES_list)
 INTERNAL_IPS = ('127.0.0.1',)
 
 INSTALLED_APPS = tuple(INSTALLED_APPS_list
-                       + ['debug_toolbar']
+                      # + ['debug_toolbar']
                        #+ ['devel'] ## auto-create test root user on syncdb
                        + ['south'])
 
