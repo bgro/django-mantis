@@ -74,6 +74,7 @@ seems to be a memory leak which we still have to track down.
        (mantis)$ git config --global http.proxy <proxy_url>
 
 #. Change into the ``django-mantis`` dictionary and do::
+
       (mantis)$ pip install -r requirements/local.txt
       (mantis)$ pip install django-simple-menu>=1.0.6
 
