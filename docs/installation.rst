@@ -2,12 +2,24 @@
 Installation
 ============
 
+The installation instructions below have been tested on an out-of-the-box
+installation of  `Ubuntu Desktop 12.04 LTS`_
+(the Desktop rather than the Server version has been used, since the majority
+of installs are likely to be for testing and developing, where having a full
+working environment and X-server installed comes in handy.) If you are using
+a different *nix flavor, you have to find the corresponding installation
+packages used with ``apt-get`` below -- the installation steps
+carried out with ``pip``, however, will be exactly the same.
+
 #. Make sure that you have the required
    dependencies on OS level for building the XML-related packages. For
    example, on an Ubuntu system, execute the following commands::
 
-     $ apt-get install libxml2 libxml2-dev
-     $ apt-get install python-dev libxslt1-dev
+     $ apt-get install libxml2 libxml2-dev python-dev libxslt1-dev
+
+   Also, while you are at it, install git, if you do not have it already::
+  
+     $ apt-get install git
 
    If you are behind a proxy, you can configure a proxy for
    ``apt-get`` by putting a file ``95proxy`` into ``/etc/apt/apt.conf.d``
@@ -116,3 +128,4 @@ Installation
 
 
 
+_Ubuntu Desktop 12.04 LTS: http://www.ubuntu.com/download/desktop
