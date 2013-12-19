@@ -13,6 +13,6 @@ South>=0.7.6
 django-dingos>=0.1.0
 django-mantis-core>=0.1.0
 django-mantis-stix-importer>=0.1.0
-django-mantis-openioc-importer>=0.1.0
+django-mantis-openioc-importer>=0.1.1
 django-mantis-iodef-importer>=0.1.0
 
