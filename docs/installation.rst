@@ -11,6 +11,14 @@ a different *nix flavor, you have to find the corresponding installation
 packages used with ``apt-get`` below -- the installation steps
 carried out with ``pip``, however, will be exactly the same.
 
+*Attention*: If you are setting up a virtual machine, make sure to give
+it at least 3GB of memory if you want to import really large XML
+structures such as MITRE's STIX conversion of the 
+Mandiant APT-1 report (http://stix.mitre.org/downloads/APT1-STIX.zip) -- 
+importing large files currently takes a lot of memory -- there
+seems to be a memory leak which we still have to track down.
+
+
 #. Make sure that you have the required
    dependencies on OS level for building the XML-related packages. For
    example, on an Ubuntu system, execute the following commands::
