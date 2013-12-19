@@ -5,8 +5,10 @@
 docutils>=0.10
 
 Django>=1.5.5
-django-simple-menu>=1.0.6
 South>=0.7.6
+#For some reason, django-simple-menus cannot be installed together in
+#one go with Django; so we take it out
+#django-simple-menu>=1.0.6
 
 django-dingos>=0.1.0
 django-mantis-core>=0.1.0

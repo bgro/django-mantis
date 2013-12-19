@@ -75,6 +75,12 @@ seems to be a memory leak which we still have to track down.
 
 #. Change into the ``django-mantis`` dictionary and do::
       (mantis)$ pip install -r requirements/local.txt
+      (mantis)$ pip install django-simple-menu>=1.0.6
+
+   (For some reason, ``django-simple-menu`` cannot be installed before Django itself has not been
+   installed completely).
+
+
 
 #. Your are now all set for running MANTIS on top of an SQLite database. If that is what you want to do,
    have a look at :doc:`quickstart`. 
