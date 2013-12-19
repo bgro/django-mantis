@@ -2,14 +2,15 @@
 # After the first "pip install -r", just run "pip freeze" and add the version
 # to each package in each requirements/*.txt.
 
-docutils==0.10
+docutils>=0.10
 
-Django==1.6
-django-simple-menu==1.0.6
-South==0.7.6
+Django>=1.5.5
+django-simple-menu>=1.0.6
+South>=0.7.6
 
-django-dingos==0.1.0
-django-mantis-core==0.1.0
-django-mantis-stix-importer==0.1.0
-django-mantis-openioc-importer==0.1.0
-django-mantis-taxii==0.1.0
+django-dingos>=0.0.9
+django-mantis-core>=0.0.9
+#django-mantis-stix-importer>=0.0.9
+#django-mantis-openioc-importer>=0.0.9
+#django-mantis-iodef-importer>=0.0.9
+#django-mantis-taxii>=0.0.9

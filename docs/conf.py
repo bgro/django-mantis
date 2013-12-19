@@ -32,7 +32,7 @@ import mantis
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = []
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.viewcode']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -47,7 +47,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u''
+project = u'Mantis'
 copyright = u'2013, Siemens'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -93,6 +93,9 @@ pygments_style = 'sphinx'
 
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
+
+# If true, keep warnings as "system message" paragraphs in the built documents.
+#keep_warnings = False
 
 
 # -- Options for HTML output ---------------------------------------------------
@@ -191,8 +194,8 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', '.tex', u' Documentation',
-   u'ChangeToMyName', 'manual'),
+  ('index', 'mantis.tex', u'Mantis Documentation',
+   u'Siemens', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -221,8 +224,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', '', u' Documentation',
-     [u'ChangeToMyName'], 1)
+    ('index', 'mantis', u'Mantis Documentation',
+     [u'Siemens'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -235,8 +238,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', '', u' Documentation',
-   u'ChangeToMyName', '', 'One line description of project.',
+  ('index', 'mantis', u'Mantis Documentation',
+   u'Siemens', 'mantis', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -248,3 +251,6 @@ texinfo_documents = [
 
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 #texinfo_show_urls = 'footnote'
+
+# If true, do not generate a @detailmenu in the "Top" node's menu.
+#texinfo_no_detailmenu = False

@@ -18,9 +18,6 @@ Installation
       Acquire::https::proxy "<proxy_url>";
 
 
-#. Find out the current version of ``libxml2-python`` by browsing to
-   https://pypi.python.org/pypi/libxml2-python and noting done the
-   version number (at time of writing, this was ``2.6.21``).
 
 #. It is recommended to use a virtual python environment.
 
@@ -36,7 +33,11 @@ Installation
      Now the virtual environment is activated -- you should see a changed 
      prompt that is prefixed with ``(mantis)``
 
-#. Install the ``libxml2`` bindings using ``pip``::
+#. Find out the current version of ``libxml2-python`` by browsing to
+   https://pypi.python.org/pypi/libxml2-python and noting done the
+   version number (at time of writing, this was ``2.6.21``).
+
+   Install the ``libxml2`` bindings using ``pip``::
 
       (mantis)$ pip install ftp://xmlsoft.org/libxml2/python/libxml2-python-<libxml2-python-version-nr>.tar.gz 
 
@@ -63,8 +64,13 @@ Installation
 
    - Install it::
  
-          apt-get install postgresql
- 
+          $ apt-get install postgresql
+          $ apt-get postgresql-server-dev-9.1 
+
+   - Install the Python module for working with postgresql::
+
+          (mantis)$ pip install psycopg2
+
    - In ``/etc/postgresql/9.1/main/postgresql.conf`` set ``ssl = False``
  
    - (Re)start the server::
@@ -98,7 +104,7 @@ Installation
  
    - In database, do::
  
-       CREATE DATABASE django OWNER django ENCODING 'UTF-8';
+       CREATE DATABASE django OWNER mantis ENCODING 'UTF-8';
  
    - In ``/etc/posgresql/9.1/main/pg_hba.conf`` enter after the line for the postgres user::
  

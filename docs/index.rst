@@ -6,15 +6,17 @@
 Welcome to MANTIS's documentation!
 ==================================
 
-Blah
-
 Contents:
 
 .. toctree::
    :maxdepth: 2
 
+   readme
    screenshots
+   what_mantis_is
    installation
+   quickstart
+   mantis_developers_guide
 
 Indices and tables
 ==================

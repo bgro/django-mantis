@@ -29,6 +29,39 @@ sys.path.insert(0, root('apps'))
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = "CHANGE THIS"
 
+# Configuration for apps used in the framework
+
+## Grappelli
+
+# The title of the menu bar
+
+GRAPPELLI_ADMIN_TITLE = "MANTIS Cyber Threat Info Management"
+
+## DINGOS
+
+DINGOS = {
+           # The OWN_ORGANIZATION_ID_NAMESPACE is used as default namespace for object identifiers
+           # if no namespace is provided
+          'OWN_ORGANIZATION_ID_NAMESPACE': 'own.organization.com',
+
+           # We do not want to write really large values to the FactValue table:
+           # with the current postgresql config, large values make trouble,
+           # because we enforce uniqueness on the FactValue table, and that
+           # requires indexing, which fails with the default config.
+           # This may be overcome by tweaking indexing in Postgresql. Until
+           # then, use a maximum size limit no larger than 2048.
+           'DINGOS_MAX_VALUE_SIZE_WRITTEN_TO_VALUE_TABLE' : 2048,
+           # The possible destinations for large values are:
+           # - DINGOS_BLOB_TABLE: a dedicated table for large values
+           # - DINGOS_FILE_SYSTEM: the file system
+           # - DINGOS_VALUES_TABLE: write to the values table anyways
+          'LARGE_VALUE_DESTINATION' : 'DINGOS_BLOB_TABLE',
+           # - The BLOB_ROOT specifies the location on the filesystem to which large values are written
+           'BLOB_ROOT' : root('blobs'),
+
+           # Later versions of DINGOS may support other CSS frameworks. Until then, the
+           # template family must remain 'grappelli'
+          'TEMPLATE_FAMILY' : 'grappelli',}
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -156,15 +189,19 @@ INSTALLED_APPS_list = [
     'menu',
     # Below, the MANTIS components are installed
     'dingos',
-    #'mantis_core',
-    #'mantis_openioc_importer',
-    #'mantis_stix_importer',
+    'mantis_core',
+    'mantis_openioc_importer',
+    'mantis_stix_importer',
     #'mantis_iodef_importer',
-    #'mantis_misp_importer',
+
+    #
     # Uncomment below to include TAXII SERVICES and YETI from MITRE's
-    # TAXII PoC implementation YETI
+    #  (you must make these available to Django, e.g. by symlinking
+    #   the app directories into the 'django-mantis' directory;).
+    #   in order to use the taxii services, you must also
+    #   append the url.py configuration
+    #
     #'taxii_services',
-    #'mantis_taxii',
     #'yeti',
 ]
 
@@ -223,21 +260,8 @@ LOGGING = {
 
 
 
-# Configuration for apps used in the framework
 
-# Grappelli
 
-# The title of the menu bar
-GRAPPELLI_ADMIN_TITLE = "MANTIS Cyber Threat Info Management"
-
-# DINGOS
-
-DINGOS = {'OWN_ORGANIZATION_ID_NAMESPACE': 'own.organization.com',
-          'BLOB_ROOT' : root('blobs')}
-
-# MANTIS
-
-MANTIS_STIX_IMPORTER = {'OWN_ORGANIZATION_ID_NAMESPACE': 'own.organization.com'}
 
 
 
