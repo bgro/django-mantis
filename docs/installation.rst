@@ -128,4 +128,4 @@ carried out with ``pip``, however, will be exactly the same.
 
 
 
-_Ubuntu Desktop 12.04 LTS: http://www.ubuntu.com/download/desktop
+.. _Ubuntu Desktop 12.04 LTS: http://www.ubuntu.com/download/desktop

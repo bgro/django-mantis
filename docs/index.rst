@@ -6,6 +6,13 @@
 Welcome to MANTIS's documentation!
 ==================================
 
+
+.. figure:: images/mantis_architecture.PNG
+   :align: center
+
+   MANTIS architecture
+
+
 Contents:
 
 .. toctree::
@@ -17,6 +24,7 @@ Contents:
    installation
    quickstart
    mantis_developers_guide
+   contributing
 
 Indices and tables
 ==================
