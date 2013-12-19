@@ -59,6 +59,7 @@ Then try out the following:
    
         127.0.0.1:8000/mantis/View/InfoObject
 
+
   and start looking around:
 
   - Select a filter for ``stix.mitre.org:STIX_Package``
@@ -72,6 +73,9 @@ Then try out the following:
     exploring (have a look at the screenshots in the documentation for
     a quick guide through the application.)
 
+  You can also have a look at the Django admin interface at::
+
+        127.0.0.1:8000/admin
 
 
 

@@ -62,7 +62,10 @@ seems to be a memory leak which we still have to track down.
       (mantis)$ pip install ftp://xmlsoft.org/libxml2/python/libxml2-python-<libxml2-python-version-nr>.tar.gz 
 
    If you are behind a proxy, you can provide ``pip`` with the proxy information with the
-   commandline argument ``--proxy  <proxy_url>``
+   commandline argument ``--proxy  <proxy_url>``.
+
+   If the download does not work via pip, download the file with your browser, and install from file
+   with `pip install <filename>`.
 
 
 #. Go to a location where you want to have the Django Mantis files and check out the git repository::
