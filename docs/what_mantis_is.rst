@@ -6,7 +6,7 @@ MANTIS
 
 * *isn't* a finished tool or even project: we like to think that it provides
   a solid basis on which cyber-threat intelligence management can be built up upon,
-  but if you expect something that works out of the box and covers all aspects
+  but if you expect something that out of the box covers all aspects
   of cyber-threat intelligence management, MANTIS isn't for you.
 
 * (currently) *isn't* a tool fit for importing *huge* datasets. It can

@@ -65,7 +65,7 @@ seems to be a memory leak which we still have to track down.
    commandline argument ``--proxy  <proxy_url>``.
 
    If the download does not work via pip, download the file with your browser, and install from file
-   with `pip install <filename>`.
+   with ``pip install <filename>``.
 
 
 #. Go to a location where you want to have the Django Mantis files and check out the git repository::
@@ -121,14 +121,14 @@ seems to be a memory leak which we still have to track down.
    
      - As user postgresql do::
  
-          createuser -P django;
+          createuser -P mantis;
  
        and do the following:
  
        - give it password ``mantis``
        - do not make it super user
        - allow it to create databases (required for running python unit tests). If you forgot about this step here, you can
-         later run (``ALTER USER django CREATEDB;``) on the database prompt to achieve the same.
+         later run (``ALTER USER mantis CREATEDB;``) on the database prompt to achieve the same.
        - do not allow it to create new roles
  
  
@@ -136,7 +136,7 @@ seems to be a memory leak which we still have to track down.
  
        CREATE DATABASE django OWNER mantis ENCODING 'UTF-8';
  
-   - In ``/etc/posgresql/9.1/main/pg_hba.conf`` enter after the line for the postgres user::
+   - In ``/etc/postgresql/9.1/main/pg_hba.conf`` enter after the line for the postgres user::
  
         # TYPE  DATABASE        USER            ADDRESS                 METHOD
  
