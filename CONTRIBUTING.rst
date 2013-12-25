@@ -13,15 +13,16 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at:
+MANTIS encompasses a number of components. For the following base components, please 
+report issues at the central issue tracker for the whole Django MANTIS framework
+at https://github.com/siemens/django-mantis/issues :
 
-* https://github.com/siemens/django-dingos/issues for issues concerning the ``django-dingos`` component
-* https://github.com/siemens/django-mantis-core/issues for issues concerning the ``django-mantis-core`` component
-* https://github.com/siemens/django-mantis-openioc-importer/issues for issues concerning the ``django-mantis-openioc-importer`` component
-* https://github.com/siemens/django-mantis-stix-importer/issues for issues concerning the ``django-mantis-stix-importer`` component
-* https://github.com/siemens/django-mantis-iodef-importer/issues for issues concerning the ``django-mantis-iodef-importer`` component
-* https://github.com/siemens/django-mantis/issues for issues concerning MANTIS as a whole or issues for which you are not
-  able to locate a specific component
+* https://github.com/siemens/django-mantis
+* https://github.com/siemens/django-dingos
+* https://github.com/siemens/django-mantis-core
+* https://github.com/siemens/django-mantis-openioc-importer
+* https://github.com/siemens/django-mantis-stix-importer
+* https://github.com/siemens/django-mantis-iodef-importer
 
 If you are reporting a bug, please include:
 
@@ -51,7 +52,7 @@ articles, and such.
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/bgro/django-dingos/issues.
+The best way to send feedback is to file an issue at https://github.com/siemens/django-mantis/issues.
 
 If you are proposing a feature:
 
@@ -63,7 +64,22 @@ If you are proposing a feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up a repository for local development.
+In your contribution, you may want to either modify/add to existing code
+or create a new Django application that interacts with the existing
+applications that are part of the Mantis framework.
+
+MANTIS profitted a lot from the advice provided in `Two Scoops of Django`_.
+Unless you are an absolute Django expert (and maybe even then), please
+read Daniel Greenfield's and Audrey Roy's excellent `Two Scoops of Django`_.
+Even though it provides best practices for Django 1.5, most of its
+advice is also valid for Django 1.6, and likely to be very relevant
+for quite a few minor revisions to come.
+
+
+Modifying/adding to existing code
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Here's how to set up a repository for local development.
 
 1. Fork the relevant repository repo on GitHub.
 2. Clone your fork locally::
@@ -90,6 +106,26 @@ Now you can make your changes locally.
 
 6. Submit a pull request through the GitHub website.
 
+Writing your own Django application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Do yourself a favor and set up the directory structure of your
+Django application in the right way from the very start.
+The easiest way to do so is to use Daniel Greenfield's `cookiecutter-djangopackage`_ template
+(which uses Audrey Roy's excellent `Cookiecutter`_ for creating the directories): this
+layout has a very sensible directory structure  with out-of-the-box configuration of ``setup.py`` for
+easy build, submission to PyPi, etc., as well as the start of a Sphinx documentation tree.
+Once you have the directory structure created, initialize a fresh git repository with it
+and get to work...
+
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+
+
+.. _cookiecutter-djangopackage: https://github.com/pydanny/cookiecutter-djangopackage
+
+
+
 Pull Request Guidelines
 -----------------------
 
@@ -100,3 +136,6 @@ Before you submit a pull request, check that it meets these guidelines:
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
 3. The pull request should work for Python 2.7.
+
+
+.. _Two Scoops of Django: https://django.2scoops.org/

@@ -1,8 +1,9 @@
 Setting up a development environment
 ====================================
 
-#. Refer to :doc:`contributing` (section "Getting Started") for information of how to fork a repository, clone it,
-   and install it for development purposes.
+#. Refer to :doc:`contributing` (section "Getting Started") for information of how to (1) either fork a repository, clone it,
+   and install it for development purposes, or (2) set up the directory structure for your own Django app that will
+   contribute to the Mantis framework.
 
 #. Chose a development environment of your liking. Here is how you can setup 
    `PyCharm`_ Professional Edition in support of development for Django:
