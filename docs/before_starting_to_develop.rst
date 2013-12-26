@@ -23,8 +23,20 @@ a sound understanding of how `django-dingos` works.
 Please refer to the `Django DINGOS developers' guide`_
 
 
-Find the right place to modify/add to: Keep django-dingos generic
------------------------------------------------------------------
+Find the right place to modify/add to
+-------------------------------------
+
+Writing your own Django application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you are adding completely new functionality to Mantis,
+the best way may very well be to create a new Django
+application.
+
+
+
+Keep django-dingos generic
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Although DINGOS is likely to be used mainly in the context of the
 Django MANTIS Cyber Threat Intelligence Management application,

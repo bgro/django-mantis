@@ -29,6 +29,20 @@ Documentation
 
 The full documentation is at http://django-mantis.readthedocs.org.
 
+Acknowledgments
+---------------
+
+
+The basic layout for this Django project with extremly useful base settings and very sensible directory layout
+ was generated with Audrey Roy's excellent `Cookiecutter`_ and Marco Fucci's `cookiecutter-simple-django`_ template.
+
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+
+
+.. _cookiecutter-simple-django: https://github.com/marcofucci/cookiecutter-simple-django
+
+
 
 .. _Django: https://www.djangoproject.com/
 .. _STIX: http://stix.mitre.org/
