@@ -42,7 +42,7 @@ Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
                     {% endfor %}
                     {% if item.title == "Search" %}
                         {% for search in customization.searches %}
-                             <li><a href="{{ search.view }}?{{ search.parameter }}">(CUSTOM) {{ search.title }}</a></li>
+                             <li><a href="{% url search.view %}?{{ search.parameter }}">(CUSTOM) {{ search.title }}</a></li>
                         {% endfor %}
                     {% endif %}
                 </ul>
