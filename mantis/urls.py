@@ -35,4 +35,6 @@ urlpatterns = patterns('',
 # So, for now, we do it here. We used to do it in models.py, but for
 # some reason (probably a change in django proper), this stopped working.
 
+
+
 import menus
