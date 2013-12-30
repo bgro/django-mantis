@@ -2,6 +2,12 @@
 Installation
 ============
 
+.. contents::
+
+-------------------
+Manual installation
+-------------------
+
 The installation instructions below have been tested on an out-of-the-box
 installation of  `Ubuntu Desktop 12.04 LTS`_
 (the Desktop rather than the Server version has been used, since the majority
@@ -146,4 +152,18 @@ seems to be a memory leak which we still have to track down.
 
 
 
+------------------------------------------
+(Semi-)automated installation with Vagrant
+------------------------------------------
+
+`Vagrant`_ allows automated provisioning of virtual machines with
+preconfigured packages, configuration settings, etc. 
+
+*TODO*: Describe use of Vagrant, location of Vagrant files in
+repository (yet to be published), etc. here.
+
+
+
 .. _Ubuntu Desktop 12.04 LTS: http://www.ubuntu.com/download/desktop
+
+.. _Vagrant: http://www.vagrantup.com/
