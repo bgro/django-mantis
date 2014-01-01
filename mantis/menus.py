@@ -22,6 +22,14 @@ Menu.add_item( "mantis_main",
                         )
 )
 
+Menu.add_item( "mantis_main",
+               MenuItem("Saved Filters/Searches", "",
+                        weight = 50,
+                        children = ()
+
+                        )
+)
+
 
 
 
