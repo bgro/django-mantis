@@ -59,19 +59,39 @@ seems to be a memory leak which we still have to track down.
      Now the virtual environment is activated -- you should see a changed 
      prompt that is prefixed with ``(mantis)``
 
-#. Find out the current version of ``libxml2-python`` by browsing to
-   https://pypi.python.org/pypi/libxml2-python and noting done the
-   version number (at time of writing, this was ``2.6.21``).
+#. Install the ``libxml2-python`` bindings
 
-   Install the ``libxml2`` bindings using ``pip``::
+   Unfortunately, the process of getting ``libxml2-python`` installed using ``pip`` varies from
+   OS to OS, because there is no proper library package available.
 
-      (mantis)$ pip install ftp://xmlsoft.org/libxml2/python/libxml2-python-<libxml2-python-version-nr>.tar.gz 
+   * For Ubuntu 12.04 do the following:
 
-   If you are behind a proxy, you can provide ``pip`` with the proxy information with the
-   commandline argument ``--proxy  <proxy_url>``.
+     Use pip to install directly from an ftp source::
 
-   If the download does not work via pip, download the file with your browser, and install from file
-   with ``pip install <filename>``.
+          (mantis)$ pip install ftp://xmlsoft.org/libxml2/python/libxml2-python-2.6.21.tar.gz 
+
+     If you are behind a proxy, you can provide ``pip`` with the proxy information with the
+     commandline argument ``--proxy  <proxy_url>``.
+
+     If the download does not work via pip, download the file with your browser, and install from file
+     with ``pip install <filename>``.
+
+   * For Ubuntu 13.10, do the following:
+
+     * Downloadand unpack the ``libxml2`` sources::
+
+           (mantis)$ wget http://xmlsoft.org/sources/libxml2-2.9.1.tar.gz"
+           (mantis)$ tar -zxvf libxml2-2.9.1.tar.gz
+
+       If you are behind a proxy, append ``-e use_proxy=yes -e http_proxy=<proxy_url>`` after the
+       URL when calling ``wget``.
+
+     * Install via ``pip``::
+
+           (mantis)$ pip install libxml2-2.9.1/python
+
+       If you are behind a proxy, you can provide ``pip`` with the proxy information with the
+       commandline argument ``--proxy  <proxy_url>``.
 
 
 #. Go to a location where you want to have the Django Mantis files and check out the git repository::
@@ -159,8 +179,9 @@ seems to be a memory leak which we still have to track down.
 `Vagrant`_ allows automated provisioning of virtual machines with
 preconfigured packages, configuration settings, etc. 
 
-*TODO*: Describe use of Vagrant, location of Vagrant files in
-repository (yet to be published), etc. here.
+(Development of Vagrant deployment scripts for Mantis is an ongoing
+effort. Scripts and documentation will be published as they become
+ready.)
 
 
 
