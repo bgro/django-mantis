@@ -76,7 +76,29 @@ DINGOS = {
                     'parameter' : 'iobject_type=72',
                     }
               ],
+              },
+          'DINGOS_DEFAULT_USER_PREFS' : {
+              'dingos' : { 'widgets' :
+                               {'embedded_in_objects' :
+                                    {'lines' : {'@description': """Max. number of objects displayed in
+                                                        widget listing the objects in which the
+                                                        current object is embedded.""",
+                                                '_value' : '5'}
+                                    } ,
+                                },
+                           'view' :
+                               {'pagination':
+                                    {'lines' : {'@description': """Max. number of lines displayed in
+                                                    paginated views.""",
+                                                '_value' : '20'},
+                                     },
+                                'orientation' : {'@description': """Layout orientation. Possible values are 'vertical' and
+                                                          'horizontal'.""",
+                                                 '_value' : 'horizontal'}
+                               }
+
               }
+}
 }
 
 DEBUG = False
