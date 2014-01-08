@@ -19,6 +19,12 @@ The heavy lifting is done in the following Django Apps:
 - `django-mantis-iodef-importer`_
 -  django-mantis-taxii (under development)
 
+.. figure:: images/mantis_architecture.PNG
+   :align: center
+   :scale: 50%
+
+   MANTIS architecture
+
 
 This project ``django-mantis`` provides a template Django Project that shows how these Django Apps can
 be used as basis for your own MANTIS-based Cyber-Threat Intelligence Management system.
@@ -34,7 +40,7 @@ Acknowledgments
 
 
 The basic layout for this Django project with extremly useful base settings and very sensible directory layout
- was generated with Audrey Roy's excellent `Cookiecutter`_ and Marco Fucci's `cookiecutter-simple-django`_ template.
+was generated with Audrey Roy's excellent `Cookiecutter`_ and Marco Fucci's `cookiecutter-simple-django`_ template.
 
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
