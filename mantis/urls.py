@@ -30,3 +30,12 @@ urlpatterns = patterns('',
 
                        ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+
+# We have to import menus.py somewhere after the URLs have been configured.
+# So, for now, we do it here. We used to do it in models.py, but for
+# some reason (probably a change in django proper), this stopped working.
+
+
+
+import menus
+ 

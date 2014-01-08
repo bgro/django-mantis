@@ -8,6 +8,11 @@ In the ``django-mantis`` folder, do the following:
 
      (mantis)$ bash quickstart.sh 
 
+  (Note that this uses a SQLite database file located in the ``/tmp`` directory:
+  any imports you do in Mantis will therefore not survive a system restart. 
+  You can move the location of the SQLite database by modifying
+  the line reading ``'/tmp/django-mantis_test.db'`` in ``mantis/settings/local.py``.)
+
 - For usage with exisiting and configured postgresql database, do::
 
      (mantis)$  bash quickstart_psql 
@@ -107,8 +112,6 @@ Then try out the following:
   You can also have a look at the Django admin interface at::
 
         127.0.0.1:8000/admin
-
-
 
 
 .. _South: http://south.readthedocs.org/en/latest/
