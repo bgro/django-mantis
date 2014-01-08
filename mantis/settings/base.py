@@ -61,7 +61,23 @@ DINGOS = {
 
            # Later versions of DINGOS may support other CSS frameworks. Until then, the
            # template family must remain 'grappelli'
-          'TEMPLATE_FAMILY' : 'grappelli',}
+          'TEMPLATE_FAMILY' : 'grappelli',
+
+          # Below, we define sample saved searches. These make only sense, if the
+          # the import commands for the default naming schemas have been carried out in
+          # exactly the same order as specified in the quickstart(_psql).sh scripts --
+          # otherwise, the identifiers specified in the searches (here '72' for InfoObjectType
+          # STIX_Package) will not work.
+          'DINGOS_DEFAULT_SAVED_SEARCHES' : {
+              'dingos' : [
+                  { 'priority' : "0",
+                    'title' : 'Filter for STIX Packages',
+                    'view' : 'url.dingos.list.infoobject.generic',
+                    'parameter' : 'iobject_type=72',
+                    }
+              ],
+              }
+}
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
