@@ -33,13 +33,21 @@ Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 {% for item in menu %}
 
 
-        {% if item.children %}
+        {% if item.children or item.title == "Saved Filters/Searches" %}
             <li class="grp-user-options-container grp-collapse grp-closed">
                 <a class="user-options-handler grp-collapse-handler" href="javascript://">{{ item.title }}</a>
                 <ul class="grp-user-options">
                     {% for child in item.children %}
                         <li><a href="{{ child.url }}">{{ child.title }}</a></li>
                     {% endfor %}
+                    {% if item.title == "Saved Filters/Searches" %}
+                        {% for search in saved_searches.Empty_List.dingos %}
+                            {% url search.view as view_url%}
+                            {% if view_url %}
+                             <li><a href="{{ view_url }}?{{ search.parameter }}">{{ search.title }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
                 </ul>
             </li>
         {% else %}
@@ -49,10 +57,6 @@ Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
         {% endif %}
 
 {% endfor %}
-
-          <li class="grp-user-options-container">
-              <a href="">{% filter force_escape %}{% firstof user.first_name user.username user.get_short_name user.get_username %}{% endfilter %}</a>
-          </li>
 
 
 
