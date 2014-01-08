@@ -55,16 +55,16 @@ Then try out the following:
 - For the files Mandiant_APT1_Report.xml and Appendix_G_IOCs_Full.xml do
   the following:
 
-  - If you are using postgresql::
+  - If you are using sqllite::
 
-      python manage.py mantis_stix_import --settings=mantis.settings.local_psql  --trace\
+      python manage.py mantis_stix_import --settings=mantis.settings.local  --trace\
           --marking_json=quickstart_examples/markings/minimal_marking.json\
           --marking_pfill=source "Mandiant APT 1 Report"\
           <file_path>
 
-  - If you are using sqllite::
+  - If you are using postgresql::
 
-      python manage.py mantis_stix_import --settings=mantis.settings.local  --trace\
+      python manage.py mantis_stix_import --settings=mantis.settings.local_psql  --trace\
           --marking_json=quickstart_examples/markings/minimal_marking.json\
           --marking_pfill=source "Mandiant APT 1 Report"\
           <file_path>
@@ -81,15 +81,13 @@ Then try out the following:
 - Start the server (if the quickstart-script has not started it already for you)
   with 
 
-  - If you are using postgresql::
-
-      python manage.py runserver 8000 --traceback --settings=mantis.settings.local_psql
-
   - If you are using sqllite::
 
       python manage.py runserver 8000 --traceback --settings=mantis.settings.local
 
+  - If you are using postgresql::
 
+      python manage.py runserver 8000 --traceback --settings=mantis.settings.local_psql
  
  - Browse to::   
    

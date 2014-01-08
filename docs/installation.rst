@@ -47,9 +47,9 @@ seems to be a memory leak which we still have to track down.
 
 #. It is recommended to use a virtual python environment.
 
-   - Make sure that ``virtualenv`` is installed::
+   - Make sure that ``virtualenv`` and ``pip`` are installed::
 
-        $ apt-get install python-virtualenv
+        $ apt-get install python-virtualenv python-pip
 
    - Create a virtual environment::
 
@@ -70,8 +70,10 @@ seems to be a memory leak which we still have to track down.
 
           (mantis)$ pip install ftp://xmlsoft.org/libxml2/python/libxml2-python-2.6.21.tar.gz 
 
-     If you are behind a proxy, you can provide ``pip`` with the proxy information with the
-     commandline argument ``--proxy  <proxy_url>``.
+     If you are behind a proxy, you can either provide ``pip`` with the proxy information with the
+     commandline argument ``--proxy  <proxy_url>`` or use the ``http_proxy`` environment variable --
+     do not do both, because this confuses ``pip``.
+     
 
      If the download does not work via pip, download the file with your browser, and install from file
      with ``pip install <filename>``.
@@ -90,8 +92,9 @@ seems to be a memory leak which we still have to track down.
 
            (mantis)$ pip install libxml2-2.9.1/python
 
-       If you are behind a proxy, you can provide ``pip`` with the proxy information with the
-       commandline argument ``--proxy  <proxy_url>``.
+       If you are behind a proxy, you can either provide ``pip`` with the proxy information with the
+       commandline argument ``--proxy  <proxy_url>`` or use the ``http_proxy`` environment variable --
+       do not do both, because this confuses ``pip``.
 
 
 #. Go to a location where you want to have the Django Mantis files and check out the git repository::
@@ -109,7 +112,6 @@ seems to be a memory leak which we still have to track down.
 
    (For some reason, ``django-simple-menu`` cannot be installed before Django itself has not been
    installed completely).
-
 
 
 #. Your are now all set for running MANTIS on top of an SQLite database. If that is what you want to do,

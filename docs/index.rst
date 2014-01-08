@@ -6,52 +6,38 @@
 The MANTIS Cyber-Intelligence Management Framework
 ==================================================
 
-MANTIS provides a framework for managing cyber threat intelligence
-expressed in standards such as STIX, CybOX, IODEF.
-
-The heavy lifting is done in the following Django Apps:
-
-- `django-dingos`_
-- `django-mantis-core`_
-- `django-mantis-stix-importer`_
-- `django-mantis-openioc-importer`_
-- `django-mantis-iodef-importer`_
--  django-mantis-taxii (under development)
-
-
-.. figure:: images/mantis_architecture.PNG
-   :align: center
-
-   MANTIS architecture
+The MANTIS (Model-based Analysis of Threat Intelligence Sources) Framework consists
+of several `Django`_ Apps that, in combination, support the management
+of cyber threat intelligence expressed in standards such as `STIX`_, `CybOX`_,
+`OpenIOC`_, `IODEF (RFC 5070)`_, etc.
 
 Important resources:
 
-* Access to the Mantis source code for installation (either
-  via ``git pull`` (recommended) or as download via the
-  `Mantis Github Repository`_
+* Access to the Mantis source code for installation:
+
+  * Either via ``git clone`` from the   `Mantis Github Repository`_ (recommended)::
+
+       git clone https://github.com/siemens/django-mantis.git
+
+  * Or via download as ``zip`` package from https://github.com/siemens/django-mantis/archive/master.zip
+   
 
 * All issues regarding Mantis and its components are tracked
   on the `Mantis Issue Tracker`_
 
-* Documentation: see below
+* Documentation:
 
-.. toctree::
-   :maxdepth: 2
+  .. toctree::
+     :maxdepth: 1
 
-   readme
-   screenshots
-   what_mantis_is
-   installation
-   quickstart
-   mantis_developers_guide
-   contributing
+     readme
+     screenshots
+     what_mantis_is
+     installation
+     quickstart
+     mantis_developers_guide
+     contributing
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
 
 .. _Mantis Github Repository: https://github.com/siemens/django-mantis
