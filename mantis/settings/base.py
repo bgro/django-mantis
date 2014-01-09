@@ -164,6 +164,9 @@ INSTALLED_APPS_list = [
     'taxii_services',
     'mantis_taxii',
     'yeti',
+    'sencha',
+    'extdirect.django',
+    'dingos_extjs'
 ]
 
 INSTALLED_APPS = tuple(INSTALLED_APPS_list + ['south'])
