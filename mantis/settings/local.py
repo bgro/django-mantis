@@ -25,27 +25,50 @@ MIDDLEWARE_CLASSES = tuple(MIDDLEWARE_CLASSES_list)
 INTERNAL_IPS = ('127.0.0.1',)
 
 INSTALLED_APPS = tuple(INSTALLED_APPS_list
-                       + ['debug_toolbar']
-                       #+ ['devel'] ## auto-create test root user on syncdb
-                       + ['south'])
+                      + ['debug_toolbar']
+                      + ['south'])
 
 # Add loggers
 
-LOGGING['loggers']['mantis_openioc_importer.importer'] =  {
+STANDARD_CONSOLE_LOGLEVEL = 'INFO'
+
+LOGGING['loggers']['dingos'] =  {
     'handlers': ['console'],
-    'level': 'INFO',
+    'level': STANDARD_CONSOLE_LOGLEVEL,
     'propagate': True,
     }
-LOGGING['loggers']['mantis_stix_importer.importer'] =  {
+
+LOGGING['loggers']['mantis'] =  {
     'handlers': ['console'],
-    'level': 'INFO',
+    'level': STANDARD_CONSOLE_LOGLEVEL,
     'propagate': True,
     }
-LOGGING['loggers']['dingos.import_handling'] =  {
+
+
+LOGGING['loggers']['mantis_openioc_importer'] =  {
     'handlers': ['console'],
-    'level': 'INFO',
+    'level': STANDARD_CONSOLE_LOGLEVEL,
     'propagate': True,
     }
+
+LOGGING['loggers']['mantis_stix_importer'] =  {
+    'handlers': ['console'],
+    'level': STANDARD_CONSOLE_LOGLEVEL,
+    'propagate': True,
+    }
+
+LOGGING['loggers']['mantis_iodef_importer'] =  {
+    'handlers': ['console'],
+    'level': STANDARD_CONSOLE_LOGLEVEL,
+    'propagate': True,
+    }
+
+LOGGING['loggers']['mantis_taxii'] =  {
+    'handlers': ['console'],
+    'level': STANDARD_CONSOLE_LOGLEVEL,
+    'propagate': True,
+    }
+
 
 
 ADMINS = (

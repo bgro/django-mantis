@@ -29,6 +29,77 @@ sys.path.insert(0, root('apps'))
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = "CHANGE THIS"
 
+# Configuration for apps used in the framework
+
+## Grappelli
+
+# The title of the menu bar
+
+GRAPPELLI_ADMIN_TITLE = "MANTIS Cyber Threat Info Management"
+
+## DINGOS
+
+DINGOS = {
+           # The OWN_ORGANIZATION_ID_NAMESPACE is used as default namespace for object identifiers
+           # if no namespace is provided
+          'OWN_ORGANIZATION_ID_NAMESPACE': 'own.organization.com',
+
+           # We do not want to write really large values to the FactValue table:
+           # with the current postgresql config, large values make trouble,
+           # because we enforce uniqueness on the FactValue table, and that
+           # requires indexing, which fails with the default config.
+           # This may be overcome by tweaking indexing in Postgresql. Until
+           # then, use a maximum size limit no larger than 2048.
+           'DINGOS_MAX_VALUE_SIZE_WRITTEN_TO_VALUE_TABLE' : 2048,
+           # The possible destinations for large values are:
+           # - DINGOS_BLOB_TABLE: a dedicated table for large values
+           # - DINGOS_FILE_SYSTEM: the file system
+           # - DINGOS_VALUES_TABLE: write to the values table anyways
+          'LARGE_VALUE_DESTINATION' : 'DINGOS_BLOB_TABLE',
+           # - The BLOB_ROOT specifies the location on the filesystem to which large values are written
+           'BLOB_ROOT' : root('blobs'),
+
+           # Later versions of DINGOS may support other CSS frameworks. Until then, the
+           # template family must remain 'grappelli'
+          'TEMPLATE_FAMILY' : 'grappelli',
+
+          # Below, we define sample saved searches. These make only sense, if the
+          # the import commands for the default naming schemas have been carried out in
+          # exactly the same order as specified in the quickstart(_psql).sh scripts --
+          # otherwise, the identifiers specified in the searches (here '72' for InfoObjectType
+          # STIX_Package) will not work.
+          'DINGOS_DEFAULT_SAVED_SEARCHES' : {
+              'dingos' : [
+                  { 'priority' : "0",
+                    'title' : 'Filter for STIX Packages',
+                    'view' : 'url.dingos.list.infoobject.generic',
+                    'parameter' : 'iobject_type=72',
+                    }
+              ],
+              },
+          'DINGOS_DEFAULT_USER_PREFS' : {
+              'dingos' : { 'widgets' :
+                               {'embedded_in_objects' :
+                                    {'lines' : {'@description': """Max. number of objects displayed in
+                                                        widget listing the objects in which the
+                                                        current object is embedded.""",
+                                                '_value' : '5'}
+                                    } ,
+                                },
+                           'view' :
+                               {'pagination':
+                                    {'lines' : {'@description': """Max. number of lines displayed in
+                                                    paginated views.""",
+                                                '_value' : '20'},
+                                     },
+                                'orientation' : {'@description': """Layout orientation. Possible values are 'vertical' and
+                                                          'horizontal'.""",
+                                                 '_value' : 'horizontal'}
+                               }
+
+              }
+}
+}
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -159,8 +230,20 @@ INSTALLED_APPS_list = [
     'mantis_core',
     'mantis_openioc_importer',
     'mantis_stix_importer',
+    'mantis_iodef_importer',
+
+    #
     # Uncomment below to include TAXII SERVICES and YETI from MITRE's
     # TAXII PoC implementation YETI
+
+    #  (you must make these available to Django, e.g. by symlinking
+    #   the app directories into the 'django-mantis' directory;).
+    #   in order to use the taxii services, you must also
+    #   append the url.py configuration
+    #
+    #'taxii_services',
+    #'yeti',
+    
     'taxii_services',
     'mantis_taxii',
     'yeti',
@@ -224,21 +307,8 @@ LOGGING = {
 
 
 
-# Configuration for apps used in the framework
 
-# Grappelli
 
-# The title of the menu bar
-GRAPPELLI_ADMIN_TITLE = "MANTIS Cyber Threat Info Management"
-
-# DINGOS
-
-DINGOS = {'OWN_ORGANIZATION_ID_NAMESPACE': 'own.organization.com',
-          'BLOB_ROOT' : root('blobs')}
-
-# MANTIS
-
-MANTIS_STIX_IMPORTER = {'OWN_ORGANIZATION_ID_NAMESPACE': 'own.organization.com'}
 
 
 

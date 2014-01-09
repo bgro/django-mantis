@@ -28,10 +28,19 @@ urlpatterns = patterns('',
                        url(r'^mantis/', include('dingos.urls')),
 
                        # Uncomment below to include URLs of MITRE's Yeti PoC app
-                       url(r'^taxii/', include('yeti.urls')),
+                       #url(r'^taxii/', include('yeti.urls')),
 
                        url(r'^ext/', include('dingos_extjs.urls')),
                        url(r'^extdirect/', include('extdirect.django.urls'))
 
                        ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+
+# We have to import menus.py somewhere after the URLs have been configured.
+# So, for now, we do it here. We used to do it in models.py, but for
+# some reason (probably a change in django proper), this stopped working.
+
+
+
+import menus
+ 
