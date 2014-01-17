@@ -2,9 +2,6 @@
 The MANTIS Cyber Threat Intelligence Management Framework
 =========================================================
 
-Architecture
-------------
-
 The MANTIS (Model-based Analysis of Threat Intelligence Sources) Framework consists
 of several `Django`_ Apps that, in combination, support the management
 of cyber threat intelligence expressed in standards such as `STIX`_, `CybOX`_,
@@ -19,21 +16,25 @@ The heavy lifting is done in the following Django Apps:
 - `django-mantis-iodef-importer`_
 -  django-mantis-taxii (under development)
 
-.. figure:: images/mantis_architecture.PNG
-   :align: center
-   :scale: 50%
-
-   MANTIS architecture
-
-
 This project ``django-mantis`` provides a template Django Project that shows how these Django Apps can
 be used as basis for your own MANTIS-based Cyber-Threat Intelligence Management system.
 
+Important resources:
 
-Documentation
--------------
+* Access to the Mantis source code for installation:
 
-The full documentation is at http://django-mantis.readthedocs.org.
+  * Either via ``git clone`` from the   `Mantis Github Repository`_ (recommended)::
+
+       git clone https://github.com/siemens/django-mantis.git
+
+  * Or via download as ``zip`` package from https://github.com/siemens/django-mantis/archive/master.zip
+   
+
+* All issues regarding Mantis and its components are tracked
+  on the `Mantis Issue Tracker`_
+
+* Documentation: the full documentation is at http://django-mantis.readthedocs.org.
+
 
 Acknowledgments
 ---------------
@@ -45,10 +46,7 @@ was generated with Audrey Roy's excellent `Cookiecutter`_ and Marco Fucci's `coo
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 
-
 .. _cookiecutter-simple-django: https://github.com/marcofucci/cookiecutter-simple-django
-
-
 
 .. _Django: https://www.djangoproject.com/
 .. _STIX: http://stix.mitre.org/
@@ -61,3 +59,9 @@ was generated with Audrey Roy's excellent `Cookiecutter`_ and Marco Fucci's `coo
 .. _django-mantis-stix-importer: https://github.com/siemens/django-mantis-stix-importer
 .. _django-mantis-openioc-importer: https://github.com/siemens/django-mantis-openioc-importer
 .. _django-mantis-iodef-importer: https://github.com/siemens/django-mantis-iodef-importer
+
+.. _Mantis Github Repository: https://github.com/siemens/django-mantis
+.. _Mantis Issue Tracker: https://github.com/siemens/django-mantis/issues?state=open
+
+
+
