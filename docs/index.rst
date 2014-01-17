@@ -30,7 +30,7 @@ Important resources:
   .. toctree::
      :maxdepth: 1
 
-     readme
+     architecture
      screenshots
      what_mantis_is
      installation
