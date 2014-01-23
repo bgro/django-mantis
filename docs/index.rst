@@ -21,9 +21,17 @@ Important resources:
 
   * Or via download as ``zip`` package from https://github.com/siemens/django-mantis/archive/master.zip
    
+* There is a mailing list  for dicussions, questions, etc.: 
+  
+  * Subscribe to the mailing list by sending a mail to ``Mantis-ti-discussion-join@lists.trusted-introducer.org``.
+
+  * The archives of the mailing list are available via `Nabble`_.
+
+  Many thanks to the `TF-CSIRT Trusted Introducer`_ for their support in hosting
+  the list!
 
 * All issues regarding Mantis and its components are tracked
-  on the `Mantis Issue Tracker`_
+  on the `Mantis Issue Tracker`_.
 
 * Documentation:
 
@@ -39,7 +47,8 @@ Important resources:
      contributing
 
 
-
+.. _TF-CSIRT Trusted Introducer: http://www.trusted-introducer.org/
+.. _Nabble: http://mantis-threat-intelligence-management-framework-discussion-list.57317.x6.nabble.com/
 .. _Mantis Github Repository: https://github.com/siemens/django-mantis
 .. _Mantis Issue Tracker: https://github.com/siemens/django-mantis/issues?state=open
 

@@ -13,19 +13,25 @@ TEMPLATE_DEBUG = DEBUG
 TEMPLATE_STRING_IF_INVALID = "INVALID EXPRESSION: '%s'"
 
 #
-# Add debug toolbar
+# To add the django-debug-toolbar (an essential tool for own development)
+# try uncommenting the lines below.
+# If you run into an issue with this (error messages 'NoReverseMatch: u'djdt' is not a registered namespace'),
+# you can instead try the explicit setup of the debug toolbar as described at
+# http://django-debug-toolbar.readthedocs.org/en/1.0/installation.html#explicit-setup
 #
 
-MIDDLEWARE_CLASSES_list.append('debug_toolbar.middleware.DebugToolbarMiddleware')
+#MIDDLEWARE_CLASSES_list.append('debug_toolbar.middleware.DebugToolbarMiddleware')
+#INSTALLED_APPS_list.append('debug_toolbar')
+#INTERNAL_IPS = ('127.0.0.1',)
+
+
+
+# Configure middleware classes and installed apps
+
 
 MIDDLEWARE_CLASSES = tuple(MIDDLEWARE_CLASSES_list)
 
-# Setting for debug toolbar
-
-INTERNAL_IPS = ('127.0.0.1',)
-
 INSTALLED_APPS = tuple(INSTALLED_APPS_list
-                      + ['debug_toolbar']
                       + ['south'])
 
 # Add loggers

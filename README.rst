@@ -28,10 +28,19 @@ Important resources:
        git clone https://github.com/siemens/django-mantis.git
 
   * Or via download as ``zip`` package from https://github.com/siemens/django-mantis/archive/master.zip
+
    
+* There is a mailing list  for dicussions, questions, etc.: 
+  
+  * Subscribe to the mailing list by sending a mail to ``Mantis-ti-discussion-join@lists.trusted-introducer.org``.
+
+  * The archives of the mailing list are available via `Nabble`_.
+
+  Many thanks to the `TF-CSIRT Trusted Introducer`_ for their support in hosting
+  the list!
 
 * All issues regarding Mantis and its components are tracked
-  on the `Mantis Issue Tracker`_
+  on the `Mantis Issue Tracker`_.
 
 * Documentation: the full documentation is at http://django-mantis.readthedocs.org.
 
@@ -43,6 +52,9 @@ Acknowledgments
 The basic layout for this Django project with extremly useful base settings and very sensible directory layout
 was generated with Audrey Roy's excellent `Cookiecutter`_ and Marco Fucci's `cookiecutter-simple-django`_ template.
 
+.. _TF-CSIRT Trusted Introducer: http://www.trusted-introducer.org/
+
+.. _Nabble: http://mantis-threat-intelligence-management-framework-discussion-list.57317.x6.nabble.com/
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 
