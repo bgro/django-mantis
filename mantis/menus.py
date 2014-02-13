@@ -8,6 +8,7 @@ Menu.add_item( "mantis_main",
                             MenuItem("Info Object List (generic filter)", reverse("url.dingos.list.infoobject.generic"), weight = 40 ),
                             MenuItem("Info Object List (filter by ID)", reverse("url.dingos.list.infoobject.by_id"), weight = 50 ),
                             MenuItem("Fact Search (simple)", reverse("url.dingos.search.fact.simple"), weight = 40 ),
+                            MenuItem("Fact Search (unique)", reverse("url.dingos.search.fact.simple.unique"), weight = 40 ),
                         ),
 
                         )
