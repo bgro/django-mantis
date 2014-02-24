@@ -2,9 +2,6 @@
 The MANTIS Cyber Threat Intelligence Management Framework
 =========================================================
 
-Architecture
-------------
-
 The MANTIS (Model-based Analysis of Threat Intelligence Sources) Framework consists
 of several `Django`_ Apps that, in combination, support the management
 of cyber threat intelligence expressed in standards such as `STIX`_, `CybOX`_,
@@ -19,21 +16,34 @@ The heavy lifting is done in the following Django Apps:
 - `django-mantis-iodef-importer`_
 -  django-mantis-taxii (under development)
 
-.. figure:: images/mantis_architecture.PNG
-   :align: center
-   :scale: 50%
-
-   MANTIS architecture
-
-
 This project ``django-mantis`` provides a template Django Project that shows how these Django Apps can
 be used as basis for your own MANTIS-based Cyber-Threat Intelligence Management system.
 
+Important resources:
 
-Documentation
--------------
+* Access to the Mantis source code for installation:
 
-The full documentation is at http://django-mantis.readthedocs.org.
+  * Either via ``git clone`` from the   `Mantis Github Repository`_ (recommended)::
+
+       git clone https://github.com/siemens/django-mantis.git
+
+  * Or via download as ``zip`` package from https://github.com/siemens/django-mantis/archive/master.zip
+
+   
+* There is a mailing list  for dicussions, questions, etc.: 
+  
+  * Subscribe to the mailing list by sending a mail to ``Mantis-ti-discussion-join@lists.trusted-introducer.org``.
+
+  * The archives of the mailing list are available via `Nabble`_.
+
+  Many thanks to the `TF-CSIRT Trusted Introducer`_ for their support in hosting
+  the list!
+
+* All issues regarding Mantis and its components are tracked
+  on the `Mantis Issue Tracker`_.
+
+* Documentation: the full documentation is at http://django-mantis.readthedocs.org.
+
 
 Acknowledgments
 ---------------
@@ -42,13 +52,13 @@ Acknowledgments
 The basic layout for this Django project with extremly useful base settings and very sensible directory layout
 was generated with Audrey Roy's excellent `Cookiecutter`_ and Marco Fucci's `cookiecutter-simple-django`_ template.
 
+.. _TF-CSIRT Trusted Introducer: http://www.trusted-introducer.org/
+
+.. _Nabble: http://mantis-threat-intelligence-management-framework-discussion-list.57317.x6.nabble.com/
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 
-
 .. _cookiecutter-simple-django: https://github.com/marcofucci/cookiecutter-simple-django
-
-
 
 .. _Django: https://www.djangoproject.com/
 .. _STIX: http://stix.mitre.org/
@@ -61,3 +71,9 @@ was generated with Audrey Roy's excellent `Cookiecutter`_ and Marco Fucci's `coo
 .. _django-mantis-stix-importer: https://github.com/siemens/django-mantis-stix-importer
 .. _django-mantis-openioc-importer: https://github.com/siemens/django-mantis-openioc-importer
 .. _django-mantis-iodef-importer: https://github.com/siemens/django-mantis-iodef-importer
+
+.. _Mantis Github Repository: https://github.com/siemens/django-mantis
+.. _Mantis Issue Tracker: https://github.com/siemens/django-mantis/issues?state=open
+
+
+
