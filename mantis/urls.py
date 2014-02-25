@@ -9,6 +9,8 @@ from django.conf.urls.static import static
 from django.contrib import admin
 admin.autodiscover()
 
+import extdirect.django as extdirect
+extdirect.autodiscover()
 
 urlpatterns = patterns('',
                        # Grappeli documentation
@@ -27,6 +29,9 @@ urlpatterns = patterns('',
 
                        # Uncomment below to include URLs of MITRE's Yeti PoC app
                        #url(r'^taxii/', include('yeti.urls')),
+
+                       url(r'^ext/', include('dingos_extjs.urls')),
+                       url(r'^extdirect/', include('extdirect.django.urls'))
 
                        ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

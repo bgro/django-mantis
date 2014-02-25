@@ -234,6 +234,8 @@ INSTALLED_APPS_list = [
 
     #
     # Uncomment below to include TAXII SERVICES and YETI from MITRE's
+    # TAXII PoC implementation YETI
+
     #  (you must make these available to Django, e.g. by symlinking
     #   the app directories into the 'django-mantis' directory;).
     #   in order to use the taxii services, you must also
@@ -241,6 +243,13 @@ INSTALLED_APPS_list = [
     #
     #'taxii_services',
     #'yeti',
+    
+    'taxii_services',
+    'mantis_taxii',
+    'yeti',
+    'sencha',
+    'extdirect.django',
+    'dingos_extjs'
 ]
 
 INSTALLED_APPS = tuple(INSTALLED_APPS_list + ['south'])

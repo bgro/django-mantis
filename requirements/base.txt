@@ -3,9 +3,10 @@
 # to each package in each requirements/*.txt.
 
 docutils>=0.10
-
 Django>=1.6
+Django>=1.5.5
 South>=0.7.6
+
 #For some reason, django-simple-menus cannot be installed together in
 #one go with Django; so we take it out
 #django-simple-menu>=1.0.6
