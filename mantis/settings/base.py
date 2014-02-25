@@ -243,11 +243,6 @@ INSTALLED_APPS_list = [
     #
     #'taxii_services',
     #'yeti',
-    
-    'taxii_services',
-    'mantis_taxii',
-    'yeti',
-
 ]
 
 INSTALLED_APPS = tuple(INSTALLED_APPS_list + ['south'])
