@@ -20,6 +20,14 @@ this program; if not, write to the Free Software Foundation, Inc., 51
 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 {% endcomment %}
 
+{% load staticfiles %}
+
+{% block stylesheets %}
+{{ block.super }}
+<link href="{% static "dingos/css/django-dingos.css" %}" rel="stylesheet" type="text/css" media="screen" />
+{% endblock %}
+
+
 {% block nav-global %}
   {% load menu %}
   {% generate_menu %}

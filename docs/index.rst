@@ -41,6 +41,7 @@ Important resources:
      architecture
      screenshots
      what_mantis_is
+     history
      installation
      quickstart
      mantis_developers_guide

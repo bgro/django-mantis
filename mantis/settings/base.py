@@ -92,9 +92,9 @@ DINGOS = {
                                                     paginated views.""",
                                                 '_value' : '20'},
                                      },
-                                'orientation' : {'@description': """Layout orientation. Possible values are 'vertical' and
+                                'orientation' : {'@description': """Layout orientation. Possible values are 'auto', 'vertical' and
                                                           'horizontal'.""",
-                                                 '_value' : 'horizontal'}
+                                                 '_value' : 'auto'}
                                }
 
               }
