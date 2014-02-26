@@ -20,6 +20,25 @@ authentication differently (see the
 
    The login screen
 
+Menus
+-----
+
+In its default configuration, MANTIS currently presents three menus:
+
+.. figure:: images/mantis_menus.png
+   :scale: 50 %
+   :align: center
+
+   The menus presented to the user by MANTIS
+
+
+
+
+* A menu over which the existing search/filter views are accessible
+* A menu over which saved searches are accessible
+* A menu for viewing/editing user-specific information
+
+
 
 Viewing imported information objects
 ------------------------------------
@@ -207,6 +226,45 @@ the occurrence of the searched term.
    :align: center
 
    Viewing a search result
+
+
+Editing user-specific data
+--------------------------
+
+Currently, each user can edit his user configurations and saved searches.
+
+
+Edit user configurations
+;;;;;;;;;;;;;;;;;;;;;;;;
+
+.. figure:: images/mantis_edit_user_config.PNG
+   :scale: 50 %
+   :align: center
+
+   The view for editing the user configurations
+
+Currently, there is only a minimum of user configurations available -- these
+will be extended in future releases of MANTIS. Also, the framework for
+managing user configurations is very flexible and can be used for own development
+(see the `relevant documentation of DINGOS`_.)
+
+.. _relevant documentation of DINGOS: http://django-dingos.readthedocs.org/en/latest/dingos_guide_to_userconfiguration.html
+
+Edit user configurations
+;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+.. figure:: images/mantis_edit_saved_searches.PNG
+   :scale: 50 %
+   :align: center
+
+   The view for editing saved searches
+
+After pressing the 'Save Search' button on the filter view, users are presented with a view
+that allows them to add the new search and edit the exiting ones; the view is also
+available via the user-specific menu in the top right of the screen.
+
+
 
 
 A look at the admin interface
