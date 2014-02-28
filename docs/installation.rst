@@ -123,7 +123,7 @@ seems to be a memory leak which we still have to track down.
    - Install it::
  
           $ apt-get install postgresql
-          $ apt-get postgresql-server-dev-9.1 
+          $ apt-get install postgresql-server-dev-9.1 
 
    - Install the Python module for working with postgresql::
 
