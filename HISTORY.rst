@@ -3,6 +3,38 @@
 History
 -------
 
+0.2.1 (2014-03-06)
+++++++++++++++++++
+
+* Changed dependencies for Mantis components
+    
+  * Mantis now requires DINGOS in version 0.2.1. The differences to 0.2.0 are as follows:
+
+    * Bugfixes
+    
+      * *CRITICAL* Remediation of painfully slow import for systems with lot's of imported data
+    
+        An illformed query led to extremely slow import of new data in systems
+        that already have lot's of data inside. This bug has been fixed.
+    
+      * Problem in link to InfoObjects in which a certain fact can be found on Unique Search Page fixed
+    
+        The link was faulty in that it carried a '&page=...' parameter that needed to be removed. 
+    
+      * Long repetition of '_' in a string lead to HTML display spilling over, because '_' was
+        not regarded as place to insert a possible line break. This has been changed.
+      
+    * New/Modified views
+    
+      * View for listing *all* InfoObjects, also those used internally by DINGOS
+        for bookkeeping (e.g., user preferences). The view is restricted to
+        Django-superusers.
+    
+    * New/Modified command-line commands
+    
+      * In 'dingos_manage_user_settings', added the ability to overwrite settings for 'ALL'
+        users.
+    
 
 0.2.0 (2014-02-26)
 ++++++++++++++++++
