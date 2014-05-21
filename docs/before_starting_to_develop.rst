@@ -40,7 +40,7 @@ Keep django-dingos generic
 
 Although DINGOS is likely to be used mainly in the context of the
 Django MANTIS Cyber Threat Intelligence Management application,
-DINGOS shold stay a /generic/ application for managing
+DINGOS should stay a /generic/ application for managing
 structured information. So whenever you find yourself
 adding/modifying stuff in DINGOS that is specific to
 cyber threat intelligence management, the STIX, CybOX standards,
