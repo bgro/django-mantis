@@ -1,0 +1,85 @@
+{% extends "admin/base_site.html" %}
+
+{% comment %}
+Copyright (c) Siemens AG, 2013
+
+This file is part of MANTIS.  MANTIS is free software: you can
+redistribute it and/or modify it under the terms of the GNU General Public
+License as published by the Free Software Foundation; either version 2
+of the License, or(at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+details.
+
+You should have received a copy of the GNU General Public License along with
+this program; if not, write to the Free Software Foundation, Inc., 51
+Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+{% endcomment %}
+
+
+
+
+<!-- Generate the MANTIS main menu -->
+{% block nav-global %}
+  {% load menu %}
+  {% generate_menu %}
+  <ul id="grp-user-tools">
+      {% if menus.mantis_main %}
+	  {% with menu=menus.mantis_main %}
+	      {% for item in menu %}
+		  {% if item.children %}
+		      <li class="grp-user-options-container grp-collapse grp-closed">
+			<a class="user-options-handler grp-collapse-handler" href="javascript://">{{ item.title }}</a>
+			<ul class="grp-user-options">
+			  {% for child in item.children %}
+			      <li><a href="{{ child.url }}">{{ child.title }}</a></li>
+			  {% endfor %}
+			</ul>
+		      </li>
+		  {% else %}
+		      <li class="grp-user-options-container">
+			<a href="{{ item.url }}">{{ item.title }}</a>
+		      </li>
+		  {% endif %}
+	      {% endfor %}
+	  {% endwith %}
+      {% endif %}
+  </ul>
+{% endblock %}
+
+
+<!-- Remove default grappelli menubar userlinks -->
+{% block userlinks %}{% endblock %}
+
+
+
+<!-- Breadcrumbs -->
+{% block breadcrumbs %}
+  {% comment %}
+  <ul xmlns="http://www.w3.org/1999/html">
+    {% if view.breadcrumbs %}
+      {% for breadcrumb in view.breadcrumbs %}
+      <li>
+	{% if forloop.last %}
+	  {% block last_crumb %}
+	    <a href={{request.get_full_path}}>{{breadcrumb.0}}</a>
+	  {% endblock %}
+	{% elif breadcrumb.1 %}
+	  <a href="{% url breadcrumb.1 %}">{{breadcrumb.0}}</a>
+	{% else %}
+	  {{breadcrumb.0}}
+	{% endif %}
+      </li>
+      {% endfor %}
+    {% else %}
+      <li>
+	<a href={{request.get_full_path}}>RELOAD</a>
+      </li>
+    {% endif %}
+  </ul>
+  {% endcomment %}
+{% endblock %}
+
+
