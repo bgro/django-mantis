@@ -3,16 +3,23 @@
 # to each package in each requirements/*.txt.
 
 docutils>=0.10
+
+celery>=3.1.10
+
+
 Django>=1.6
+django-celery>=3.1.10
+
 South>=0.7.6
 
 #For some reason, django-simple-menus cannot be installed together in
 #one go with Django; so we take it out
-#django-simple-menu>=1.0.6
+#django-simple-menu>=1.0.9
 
 django-dingos>=0.2.1
+django-dingos-authoring>=0.1.0
 django-mantis-core>=0.2.0
 django-mantis-stix-importer>=0.2.0
 django-mantis-openioc-importer>=0.2.0
 django-mantis-iodef-importer>=0.1.0
-
+django-mantis-authoring>=0.1.0
