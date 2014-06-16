@@ -6,6 +6,12 @@ from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 
 
+# The following import seems to be necessary to have somewhere where
+# it is carried out at an early stage;
+# otherwise the celery tasks in the apps are not initialized properly.
+
+from . import celery
+
 from .views import MessagingTestView
 
 # Uncomment the next two lines to enable the admin:
