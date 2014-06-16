@@ -233,6 +233,7 @@ TEMPLATE_DIRS = (
 
 INSTALLED_APPS_list = [
     'grappelli',
+    'djcelery',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

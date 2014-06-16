@@ -26,14 +26,6 @@ TEMPLATE_STRING_IF_INVALID = "INVALID EXPRESSION: '%s'"
 
 
 
-# Configure middleware classes and installed apps
-
-
-MIDDLEWARE_CLASSES = tuple(MIDDLEWARE_CLASSES_list)
-
-INSTALLED_APPS = tuple(INSTALLED_APPS_list
-                      + ['south'])
-
 # Add loggers
 
 STANDARD_CONSOLE_LOGLEVEL = 'INFO'

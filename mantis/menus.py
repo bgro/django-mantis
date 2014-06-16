@@ -22,10 +22,10 @@ Menu.add_item( "mantis_main",
 )
 
 # Login button if user is not authenticated
-Menu.add_item( "mantis_main",
-               MenuItem("Log In",
-                        reverse("url.mantis.startpage"),
-                        weight = 1000,
-                        check = lambda request: not request.user.is_authenticated()
-               )
-)
+#Menu.add_item( "mantis_main",
+#               MenuItem("Log In",
+#                        reverse("url.mantis.startpage"),
+#                        weight = 1000,
+#                        check = lambda request: not request.user.is_authenticated()
+#               )
+#)

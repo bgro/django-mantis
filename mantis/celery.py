@@ -8,9 +8,8 @@ from django.conf import settings
 
 # set the default Django settings module for the 'celery' program.
 
-if not settings.configured:
-    settings.configure()
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mantis.settings.local_psql')
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mantis.settings.local_psql')
 
 app = Celery('mantis')
 

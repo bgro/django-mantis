@@ -5,6 +5,9 @@ from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 
+
+from .views import MessagingTestView
+
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
@@ -29,8 +32,14 @@ urlpatterns = patterns('',
                        url(r'^mantis/authoring/', include('mantis_authoring.urls')),
 
 
+                       # Include some test views
+
+                       url(r'^mantis/Test/Messaging', MessagingTestView.as_view()),
+
                        # Uncomment below to include URLs of MITRE's Yeti PoC app
                        #url(r'^taxii/', include('yeti.urls')),
+
+
 
                        ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
