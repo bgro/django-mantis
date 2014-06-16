@@ -24,6 +24,11 @@ urlpatterns = patterns('',
 
                        url(r'^mantis/', include('dingos.urls')),
 
+                       # Include the authoring apps and the authoring base (dingos_authoring)
+                       url(r'^mantis/authoring/', include('dingos_authoring.urls')),
+                       url(r'^mantis/authoring/', include('mantis_authoring.urls')),
+
+
                        # Uncomment below to include URLs of MITRE's Yeti PoC app
                        #url(r'^taxii/', include('yeti.urls')),
 

@@ -1,7 +1,7 @@
-import sys
+import sys, os, re, tempfile
 from os.path import join, abspath, dirname
 
-import os
+from mantis_stix_importer import STIX_OBJECTTYPE_ICON_MAPPING
 
 from django.core.exceptions import ImproperlyConfigured
 
@@ -98,8 +98,26 @@ DINGOS = {
                                }
 
               }
+},
+
+    # We define the mapping of object types to images for the graph view:
+    'OBJECTTYPE_ICON_MAPPING': STIX_OBJECTTYPE_ICON_MAPPING
 }
+
+# DINGOS authoring specific configuration
+DINGOS_AUTHORING = {
+   'IMPORTER_REGISTRY' : ( (re.compile("http://stix.mitre.org.*"), "mantis_stix_importer.importer","STIX_Import"),
+                           (re.compile("http://cybox.mitre.org.*"), "mantis_stix_importer.importer","STIX_Import"),
+                           (re.compile("http://schemas.mandiant.com/2010/ioc"), "mantis_openioc_importer.importer","OpenIOC_Import") ),
+
+    # Path to a directory where uploaded files are temporarily stored for analysis (content detection)
+    'FILE_CACHE_PATH': join(tempfile.gettempdir(), 'mantis_authoring')
 }
+if not os.path.isdir(DINGOS_AUTHORING['FILE_CACHE_PATH']):
+    os.mkdir(DINGOS_AUTHORING['FILE_CACHE_PATH'])
+
+
+
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -227,15 +245,15 @@ INSTALLED_APPS_list = [
     'menu',
     # Below, the MANTIS components are installed
     'dingos',
+    'dingos_authoring',
     'mantis_core',
     'mantis_openioc_importer',
     'mantis_stix_importer',
     'mantis_iodef_importer',
-
+    'mantis_authoring',
     #
     # Uncomment below to include TAXII SERVICES and YETI from MITRE's
     # TAXII PoC implementation YETI
-
     #  (you must make these available to Django, e.g. by symlinking
     #   the app directories into the 'django-mantis' directory;).
     #   in order to use the taxii services, you must also
@@ -300,8 +318,11 @@ LOGGING = {
 
 
 
+# Celery configuration
 
+CELERY_RESULT_BACKEND='djcelery.backends.database:DatabaseBackend'
 
+BROKER_URL = 'amqp://guest:guest@localhost:5672//'
 
 
 
