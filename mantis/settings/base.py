@@ -109,12 +109,15 @@ DINGOS_AUTHORING = {
    'IMPORTER_REGISTRY' : ( (re.compile("http://stix.mitre.org.*"), "mantis_stix_importer.importer","STIX_Import"),
                            (re.compile("http://cybox.mitre.org.*"), "mantis_stix_importer.importer","STIX_Import"),
                            (re.compile("http://schemas.mandiant.com/2010/ioc"), "mantis_openioc_importer.importer","OpenIOC_Import") ),
+}
 
+# MANTIS authoring specific configuration
+MANTIS_AUTHORING = {
     # Path to a directory where uploaded files are temporarily stored for analysis (content detection)
     'FILE_CACHE_PATH': join(tempfile.gettempdir(), 'mantis_authoring')
 }
-if not os.path.isdir(DINGOS_AUTHORING['FILE_CACHE_PATH']):
-    os.mkdir(DINGOS_AUTHORING['FILE_CACHE_PATH'])
+if not os.path.isdir(MANTIS_AUTHORING['FILE_CACHE_PATH']):
+    os.mkdir(MANTIS_AUTHORING['FILE_CACHE_PATH'])
 
 
 
@@ -220,6 +223,7 @@ MIDDLEWARE_CLASSES = tuple(MIDDLEWARE_CLASSES_list)
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.request',
+    'django.contrib.messages.context_processors.messages',
 )
 
 ROOT_URLCONF = 'mantis.urls'

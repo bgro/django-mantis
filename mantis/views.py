@@ -15,7 +15,11 @@ class MessagingTestView(SuperuserRequiredMixin,BasicTemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(MessagingTestView, self).get_context_data(**kwargs)
-        context['content'] = "If the Messaging Framework works, there should be a green bar above with a message that the framework works!"
+        context['content'] = """If the Messaging Framework works, there should be a green bar above with a message that the framework works!
+                                If that is not the case, make sure that 
+                                (1) 'django.contrib.messages' is in the installed apps; 
+                                (2) 'django.contrib.messages.context_processors.messages' is in the context processors;
+                                (3) 'django.contrib.messages.middleware.MessageMiddleware', is included in the middlewares."""
         return context
 
 
