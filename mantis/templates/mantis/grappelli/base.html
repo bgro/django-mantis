@@ -34,7 +34,9 @@ Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 			<a class="user-options-handler grp-collapse-handler" href="javascript://">{{ item.title }}</a>
 			<ul class="grp-user-options">
 			  {% for child in item.children %}
-			      <li><a href="{{ child.url }}">{{ child.title }}</a></li>
+			      {% if child.visible %} 
+			        <li><a href="{{ child.url }}">{{ child.title }}</a></li>
+			      {% endif %}
 			  {% endfor %}
 			</ul>
 		      </li>
