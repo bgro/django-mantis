@@ -12,6 +12,7 @@ Menu.add_item( "mantis_main",
                         weight = 1000,
                         children = (MenuItem("Edit user config", reverse("url.dingos.admin.view.userprefs"), weight = 10 ),
                                     MenuItem("Edit saved searches", reverse("url.dingos.admin.edit.savedsearches"), weight = 20 ),
+                                    MenuItem("Switch Authoring Group", reverse("url.dingos_authoring.action.switch_authoring_group"), weight = 30 ),
                                     MenuItem("Log out",
                                              reverse("admin:logout"),
                                              weight = 100
