@@ -12,11 +12,14 @@ from django.conf.urls.static import static
 
 from . import celery
 
-from .views import MessagingTestView
+from .views import MessagingTestView, HomeView
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
+
+
+
 
 urlpatterns = patterns('',
                        # Grappeli documentation
@@ -33,6 +36,9 @@ urlpatterns = patterns('',
 
                        url(r'^mantis/', include('dingos.urls')),
 
+                       # specialized views for STIX/CybOX objecte
+                       url(r'^mantis/', include('mantis_stix_importer.urls')),
+
                        # Include the authoring apps and the authoring base (dingos_authoring)
                        url(r'^mantis/Authoring/', include('dingos_authoring.urls')),
                        url(r'^mantis/Authoring/', include('mantis_authoring.urls')),
@@ -42,6 +48,9 @@ urlpatterns = patterns('',
 
                        url(r'^mantis/Test/Messaging', MessagingTestView.as_view()),
 
+                       # An empty home view
+                       url(r'^mantis/?$', HomeView.as_view()),
+
                        # Uncomment below to include URLs of MITRE's Yeti PoC app
                        #url(r'^taxii/', include('yeti.urls')),
 
@@ -49,6 +58,12 @@ urlpatterns = patterns('',
 
                        ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+
+if settings.USE_DEBUG_TOOLBAR:
+    import debug_toolbar
+    urlpatterns += patterns('',
+                            url(r'^__debug__/', include(debug_toolbar.urls)),
+                            )
 
 # We have to import menus.py somewhere after the URLs have been configured.
 # So, for now, we do it here. We used to do it in models.py, but for

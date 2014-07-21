@@ -5,6 +5,10 @@ from django.contrib import messages
 
 from dingos import DINGOS_TEMPLATE_FAMILY
 
+class HomeView(BasicTemplateView):
+    template_name = 'mantis/%s/Home.html' % DINGOS_TEMPLATE_FAMILY
+
+
 class MessagingTestView(SuperuserRequiredMixin,BasicTemplateView):
     """
     View for editing the saved searches of a user.

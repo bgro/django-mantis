@@ -1,7 +1,7 @@
 import sys, os, re, tempfile
 from os.path import join, abspath, dirname
 
-from mantis_stix_importer import STIX_OBJECTTYPE_ICON_MAPPING
+from mantis_stix_importer import STIX_OBJECTTYPE_ICON_MAPPING, STIX_OBJECTTYPE_VIEW_MAPPING
 
 from django.core.exceptions import ImproperlyConfigured
 
@@ -24,6 +24,18 @@ root = lambda *x: join(abspath(PROJECT_ROOT), *x)
 
 sys.path.insert(0, root('apps'))
 
+
+
+
+USE_DEBUG_TOOLBAR = True
+
+
+
+DEBUG_TOOLBAR_CONFIG = {'SHOW_TOOLBAR_CALLBACK': "mantis.settings.setting_utils.mantis_show_toolbar"}
+
+DEBUG_TOOLBAR_PATCH_SETTINGS = False
+
+DEBUG_TOOLBAR_IPS = ["127.0.0.1"]
 
 
 # Make this unique, and don't share it with anybody.
@@ -101,7 +113,11 @@ DINGOS = {
 },
 
     # We define the mapping of object types to images for the graph view:
-    'OBJECTTYPE_ICON_MAPPING': STIX_OBJECTTYPE_ICON_MAPPING
+    'OBJECTTYPE_ICON_MAPPING': STIX_OBJECTTYPE_ICON_MAPPING,
+    # We define the mapping of object types to specialized views
+    'OBJECTTYPE_VIEW_MAPPING': STIX_OBJECTTYPE_VIEW_MAPPING
+
+
 }
 
 # DINGOS authoring specific configuration
@@ -205,7 +221,12 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.app_directories.Loader',
 )
 
-MIDDLEWARE_CLASSES_list = [
+
+MIDDLEWARE_CLASSES_list = []
+
+
+
+MIDDLEWARE_CLASSES_list += MIDDLEWARE_CLASSES_list + [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -213,6 +234,11 @@ MIDDLEWARE_CLASSES_list = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+if USE_DEBUG_TOOLBAR:
+    MIDDLEWARE_CLASSES_list.append('debug_toolbar.middleware.DebugToolbarMiddleware')
+    INTERNAL_IPS=DEBUG_TOOLBAR_IPS
+
 
 MIDDLEWARE_CLASSES = tuple(MIDDLEWARE_CLASSES_list)
 
@@ -236,6 +262,7 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS_list = [
+    'debug_toolbar',
     'grappelli',
     'djcelery',
     'django.contrib.auth',
@@ -267,6 +294,9 @@ INSTALLED_APPS_list = [
     #'taxii_services',
     #'yeti',
 ]
+
+#if USE_DEBUG_TOOLBAR:
+#    INSTALLED_APPS_list.append('debug_toolbar')
 
 INSTALLED_APPS = tuple(INSTALLED_APPS_list + ['south'])
 
