@@ -1,0 +1,62 @@
+{% extends "dingos/grappelli/details/base_details.html" %}
+
+{% comment %}
+Copyright (c) Siemens AG, 2013
+
+This file is part of MANTIS.  MANTIS is free software: you can
+redistribute it and/or modify it under the terms of the GNU General Public
+License as published by the Free Software Foundation; either version 2
+of the License, or(at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+details.
+
+You should have received a copy of the GNU General Public License along with
+this program; if not, write to the Free Software Foundation, Inc., 51
+Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+{% endcomment %}
+
+
+{% load dingos_tags %}
+
+
+{% block content_title %}
+<h1>Welcome to Mantis!</h1>
+
+{% endblock %}
+
+{% block content %}
+<div class=
+    "l-2cr-fluid l-d-15">
+
+<div class="c-1">
+
+</div>
+
+<div class="c-2">
+    <p>The MANTIS (Model-based Analysis of Threat Intelligence Sources) Framework consists
+        of several <a href="https://www.djangoproject.com/">Django</a> Apps that, in combination, support the management
+        of cyber threat intelligence expressed in standards such as <a href="http://stix.mitre.org/">STIX</a>, <a href="http://cybox.mitre.org/">CybOX</a>,
+        <a href="http://www.openioc.org/">OpenIOC</a>, <a href="http://www.ietf.org/rfc/rfc5070.txt">IODEF (RFC 5070)</a>, etc.</p>
+    <br/>
+    <p>The heavy lifting is done in the following Django Apps:</p>
+    <br/>
+    <ul>
+        <li><a href="https://github.com/siemens/django-dingos/blob/master/docs/what_dingos_is_all_about.rst">django-dingos</a></li>
+        <li><a href="https://github.com/siemens/django-mantis-core">django-mantis-core</a></li>
+        <li><a href="https://github.com/siemens/django-mantis-stix-importer">django-mantis-stix-importer</a></li>
+        <li><a href="https://github.com/siemens/django-mantis-openioc-importer">django-mantis-openioc-importer</a></li>
+        <li><a href="https://github.com/siemens/django-mantis-iodef-importer">django-mantis-iodef-importer</a></li>
+    </ul>
+    <br/>
+    <p>The project <a href="https://github.com/siemens/django-mantis">django-mantis</a> provides a template Django Project that shows how these Django Apps can
+        be used as basis for your own MANTIS-based Cyber-Threat Intelligence Management system.</p>
+
+</div>
+
+</div>
+
+
+{% endblock %}
