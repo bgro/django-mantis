@@ -20,6 +20,28 @@ admin.autodiscover()
 
 
 
+# API Stuff
+from tastypie.api import Api
+from mantis_api_siemens.datasources import IkarusResource, SCDResource, CISOAREResource, CISONICResource, \
+                NICResource, ActiveDirectoryResource, pDNSResource
+from mantis_api.datasources import VirustotalResource
+
+v1_api = Api(api_name='v1.0')
+
+# Public API
+v1_api.register(VirustotalResource.VirustotalResource())
+
+# Private API
+v1_api.register(IkarusResource.IkarusResource())
+v1_api.register(SCDResource.SCDResource())
+v1_api.register(CISOAREResource.CISOAREResource())
+v1_api.register(CISONICResource.CISONICResource())
+v1_api.register(NICResource.NICResource())
+v1_api.register(ActiveDirectoryResource.ActiveDirectoryResource())
+v1_api.register(pDNSResource.pDNSResource())
+
+
+
 
 urlpatterns = patterns('',
                        # Grappeli documentation
@@ -55,6 +77,7 @@ urlpatterns = patterns('',
                        #url(r'^taxii/', include('yeti.urls')),
 
 
+                       url(r'^api/', include(v1_api.urls)),
 
                        ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

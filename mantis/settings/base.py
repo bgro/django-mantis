@@ -1,9 +1,9 @@
 import sys, os, re, tempfile
 from os.path import join, abspath, dirname
+from django.core.exceptions import ImproperlyConfigured
 
 from mantis_stix_importer import STIX_OBJECTTYPE_ICON_MAPPING, STIX_OBJECTTYPE_VIEW_MAPPING, STIX_POSTPROCESSOR_REGISTRY
 
-from django.core.exceptions import ImproperlyConfigured
 
 def get_env_variable(var_name):
     """ Get the environment variable or return exception """
@@ -276,6 +276,7 @@ INSTALLED_APPS_list = [
     # We use django-simplemenu for displaying menu structures
     'menu',
     # Below, the MANTIS components are installed
+    'mantis',
     'dingos',
     'dingos_authoring',
     'mantis_core',

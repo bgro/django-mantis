@@ -21,18 +21,32 @@ Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 
 
-<!-- Generate the MANTIS main menu -->
+<!-- Global CSS -->
+{% load static %}
+{% block stylesheets %}
+  {{ block.super }}
+  <link href="{% static 'mantis/css/django-mantis.css' %}" rel="stylesheet" type="text/css" media="screen" />
+{% endblock %}
+
+
+
+<!-- MANTIS main menu / top bar -->
 {% block nav-global %}
   {% load menu %}
   {% generate_menu %}
-  <ul id="grp-user-tools">
-      <li class='grp-user-options-container grp-collapse grp-open'>
-          <form action={% url "url.dingos.search.fact.simple" %} method='get'>
-          <input name="fact__fact_values__value" placeholder='Search'> </input></form></li>
-      {% if menus.mantis_main %}
 
-	  {% with menu=menus.mantis_main %}
-	      {% for item in menu %}
+
+<div style="float: left; margin: 0 10px;">
+  <form action={% url "url.dingos.search.fact.simple" %} method="GET">
+    <input type="text" name="fact__fact_values__value" placeholder="Search" style="margin-top: 5px; width: 150px"/>
+  </form>
+</div>
+
+
+<ul id="grp-user-tools">
+    {% if menus.mantis_main %}
+	{% with menu=menus.mantis_main %}
+            {% for item in menu %}
 		  {% if item.children %}
 		      <li class="grp-user-options-container grp-collapse grp-closed">
 			<a class="user-options-handler grp-collapse-handler" href="javascript://">{{ item.title }}</a>
@@ -49,11 +63,16 @@ Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 			<a href="{{ item.url }}">{{ item.title }}</a>
 		      </li>
 		  {% endif %}
-	      {% endfor %}
-	  {% endwith %}
-      {% endif %}
+	    {% endfor %}
+	{% endwith %}
+    {% endif %}
   </ul>
+
+
+
+
 {% endblock %}
+
 
 
 <!-- Remove default grappelli menubar userlinks -->
@@ -64,7 +83,7 @@ Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 <!-- Breadcrumbs -->
 {% block breadcrumbs %}
   {% comment %}
-  <ul xmlns="http://www.w3.org/1999/html">
+  <ul>
     {% if view.breadcrumbs %}
       {% for breadcrumb in view.breadcrumbs %}
       <li>
