@@ -52,6 +52,24 @@
 
 }
 
+
+/* hack the header toolbar so when too many menu entries expand the height, the acutal content is not overlapped */
+body > #grp-container > header {
+    position: relative;
+}
+body > #grp-container > article {
+    top: 40px;
+}
+
+/* adjust z-index so dropdowns dont overlap the menu items */
+header#grp-header #grp-navigation ul#grp-user-tools > li {
+    z-index: 10;
+}
+header#grp-header #grp-navigation ul#grp-user-tools > li > ul{
+    z-index: 20;
+}
+
+
 /* show ellipsis on overflow in dropdown */
 header#grp-header #grp-navigation ul#grp-user-tools > li a {
   overflow: hidden;

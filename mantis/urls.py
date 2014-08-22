@@ -58,7 +58,7 @@ urlpatterns = patterns('',
 
                        url(r'^mantis/', include('dingos.urls')),
 
-                       # specialized views for STIX/CybOX objecte
+                       # specialized views for STIX/CybOX objects
                        url(r'^mantis/', include('mantis_stix_importer.urls')),
 
                        # Include the authoring apps and the authoring base (dingos_authoring)
@@ -67,17 +67,23 @@ urlpatterns = patterns('',
 
 
                        # Include some test views
-
                        url(r'^mantis/Test/Messaging', MessagingTestView.as_view()),
 
                        # An empty home view
                        url(r'^mantis/?$', HomeView.as_view()),
 
+                       # Include the Siemens Dashboard app
+                       url(r'^mantis/dashboard/', include('mantis_dashboard.urls', namespace='mantis_dashboard')),
+
                        # Uncomment below to include URLs of MITRE's Yeti PoC app
                        #url(r'^taxii/', include('yeti.urls')),
 
-
+                       # Our API
                        url(r'^api/', include(v1_api.urls)),
+
+                       # OAuth2 Provider URLs
+                       url(r'^oauth2/', include('provider.oauth2.urls', namespace = 'oauth2')),
+
 
                        ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

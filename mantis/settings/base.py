@@ -284,6 +284,17 @@ INSTALLED_APPS_list = [
     'mantis_stix_importer',
     'mantis_iodef_importer',
     'mantis_authoring',
+
+    # Include the Dashboard!
+    'mantis_dashboard',
+
+    # Include the django-oauth2-provider
+    'provider',
+    'provider.oauth2',
+
+    # Include the Mantis API
+    'mantis_api',
+
     #
     # Uncomment below to include TAXII SERVICES and YETI from MITRE's
     # TAXII PoC implementation YETI
