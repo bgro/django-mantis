@@ -61,12 +61,9 @@ body > #grp-container > article {
     top: 40px;
 }
 
-/* adjust z-index so dropdowns dont overlap the menu items */
-header#grp-header #grp-navigation ul#grp-user-tools > li {
-    z-index: 10;
-}
-header#grp-header #grp-navigation ul#grp-user-tools > li > ul{
-    z-index: 20;
+/* fix dropdowns overlapping the menu items */
+header#grp-header #grp-navigation ul li.grp-collapse {
+  position: initial;
 }
 
 
