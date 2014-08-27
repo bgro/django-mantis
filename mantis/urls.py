@@ -23,12 +23,14 @@ admin.autodiscover()
 from tastypie.api import Api
 from mantis_api_siemens.datasources import IkarusResource, SCDResource, CISOAREResource, CISONICResource, \
                 NICResource, ActiveDirectoryResource, pDNSSiemensResource, pDNSCIRCLResource
-from mantis_api.datasources import VirustotalResource
+from mantis_api.datasources import VirustotalResource, MantisIpResource, MantisURIResource
 
 v1_api = Api(api_name='v1.0')
 
 # Public API
 v1_api.register(VirustotalResource.VirustotalResource())
+v1_api.register(MantisIpResource.MantisIpResource())
+v1_api.register(MantisURIResource.MantisURIResource())
 
 # Private API
 v1_api.register(IkarusResource.IkarusResource())
