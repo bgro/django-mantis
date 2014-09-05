@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
+from django.http import HttpResponseRedirect
 
 
 # The following import seems to be necessary to have somewhere where
@@ -33,7 +34,8 @@ v1_api.register(MantisIpResource.MantisIpResource())
 v1_api.register(MantisURIResource.MantisURIResource())
 
 # Private API
-v1_api.register(IkarusResource.IkarusResource())
+v1_api.register(IkarusResource.IkarusCategoryResource())
+v1_api.register(IkarusResource.IkarusBlockResource())
 v1_api.register(SCDResource.SCDResource())
 v1_api.register(CISOAREResource.CISOAREResource())
 v1_api.register(CISONICResource.CISONICResource())
