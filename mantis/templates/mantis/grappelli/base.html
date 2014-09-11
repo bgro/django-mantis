@@ -21,19 +21,6 @@ Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 
 
-<!-- Global CSS -->
-{% load static %}
-{% block stylesheets %}
-  {{ block.super }}
-  <link href="{% static 'mantis/css/django-mantis.css' %}" rel="stylesheet" type="text/css" media="screen" />
-{% endblock %}
-{% block javascripts %}
-  {{ block.super }}
-  <script src="{% static 'mantis/js/django-mantis.js' %}"></script>
-{% endblock javascripts %}
-
-
-
 <!-- MANTIS main menu / top bar -->
 {% block nav-global %}
   {% load menu %}
@@ -42,7 +29,7 @@ Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 <div style="float: left; margin: 0 10px;">
   <form action={% url "url.dingos.search.fact.simple" %} method="GET">
-    <input type="text" name="fact__fact_values__value" placeholder="Search" style="margin-top: 5px; width: 150px"/>
+    <input type="text" name="fact__fact_values__value" placeholder="Search" style="margin-top: 5px; width: 140px"/>
   </form>
 </div>
 

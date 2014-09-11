@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
+from django.http import HttpResponseRedirect
 
 
 # The following import seems to be necessary to have somewhere where
@@ -23,15 +24,17 @@ admin.autodiscover()
 from tastypie.api import Api
 from mantis_api_siemens.datasources import IkarusResource, SCDResource, CISOAREResource, CISONICResource, \
                 NICResource, ActiveDirectoryResource, pDNSSiemensResource, pDNSCIRCLResource
-from mantis_api.datasources import VirustotalResource
+from mantis_api.datasources import VirustotalResource, MantisDashboardResource
 
 v1_api = Api(api_name='v1.0')
 
 # Public API
 v1_api.register(VirustotalResource.VirustotalResource())
+v1_api.register(MantisDashboardResource.MantisDashboardResource())
 
 # Private API
-v1_api.register(IkarusResource.IkarusResource())
+v1_api.register(IkarusResource.IkarusCategoryResource())
+v1_api.register(IkarusResource.IkarusBlockResource())
 v1_api.register(SCDResource.SCDResource())
 v1_api.register(CISOAREResource.CISOAREResource())
 v1_api.register(CISONICResource.CISONICResource())
