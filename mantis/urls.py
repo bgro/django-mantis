@@ -25,7 +25,7 @@ from tastypie.api import Api
 from mantis_api_siemens.datasources import IkarusResource, SCDResource, CISOAREResource, CISONICResource, \
                 NICResource, ActiveDirectoryResource, pDNSSiemensResource, pDNSCIRCLResource
 
-from mantis_api.datasources import VirustotalResource, MantisDashboardResource MantisResource
+from mantis_api.datasources import VirustotalResource, MantisDashboardResource, MantisResource
 
 v1_api = Api(api_name='v1.0')
 
