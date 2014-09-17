@@ -25,7 +25,7 @@ root = lambda *x: join(abspath(PROJECT_ROOT), *x)
 sys.path.insert(0, root('apps'))
 
 
-USE_DEBUG_TOOLBAR = True
+USE_DEBUG_TOOLBAR = False
 
 
 

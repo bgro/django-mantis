@@ -24,15 +24,15 @@ admin.autodiscover()
 from tastypie.api import Api
 from mantis_api_siemens.datasources import IkarusResource, SCDResource, CISOAREResource, CISONICResource, \
                 NICResource, ActiveDirectoryResource, pDNSSiemensResource, pDNSCIRCLResource
-from mantis_api.datasources import VirustotalResource, MantisIpResource, MantisURIResource, MantisResource
+
+from mantis_api.datasources import VirustotalResource, MantisDashboardResource MantisResource
 
 v1_api = Api(api_name='v1.0')
 
 # Public API
 v1_api.register(VirustotalResource.VirustotalResource())
-v1_api.register(MantisIpResource.MantisIpResource())
-v1_api.register(MantisURIResource.MantisURIResource())
 v1_api.register(MantisResource.MantisResource())
+v1_api.register(MantisDashboardResource.MantisDashboardResource())
 
 # Private API
 v1_api.register(IkarusResource.IkarusCategoryResource())
@@ -106,12 +106,3 @@ if settings.USE_DEBUG_TOOLBAR:
     urlpatterns += patterns('',
                             url(r'^__debug__/', include(debug_toolbar.urls)),
                             )
-
-# We have to import menus.py somewhere after the URLs have been configured.
-# So, for now, we do it here. We used to do it in models.py, but for
-# some reason (probably a change in django proper), this stopped working.
-
-
-
-import menus
- 
