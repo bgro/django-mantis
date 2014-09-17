@@ -1,0 +1,96 @@
+# Where to chdir at start.
+# Example: /home/mantis/ti/django-mantis
+CELERYD_CHDIR="/home/mantis/ti/django-mantis"
+
+# Python interpreter from environment.
+# Example : /home/mantis/.virtualenvs/mantis_dev/bin/python
+ENV_PYTHON="/home/mantis/.virtualenvs/mantis_dev/bin/python"
+
+# Name of the projects settings module.
+# Example: "mantis.settings.local_psql"
+export "mantis.settings.local_psql"
+
+# Names of nodes to start
+#   most will only start one node:
+CELERYD_NODES="worker1"
+
+# Absolute or relative path to the 'celery' command:
+CELERY_BIN="/home/mantis/.virtualenvs/mantis_dev/bin/celery"
+
+# App instance to use
+# comment out this line if you don't use an app
+CELERY_APP="mantis"
+
+# How to call "manage.py celeryd_multi"
+CELERYD_MULTI="$ENV_PYTHON $CELERYD_CHDIR/manage.py celeryd_multi"
+
+# How to call "manage.py celeryctl"
+CELERYCTL="$ENV_PYTHON $CELERYD_CHDIR/manage.py celeryctl"
+
+# Name of the celery config module.
+CELERY_CONFIG_MODULE="mantis"
+
+# Extra command-line arguments to the worker
+CELERYD_OPTS="--time-limit=300 --concurrency=8"
+
+# %N will be replaced with the first part of the nodename.
+CELERYD_LOG_FILE="/var/log/celery/%N.log"
+CELERYD_PID_FILE="/var/run/celery/%N.pid"
+
+# Workers should run as an unprivileged user.
+#   You need to create this user manually (or you can choose
+#   a user/group combination that already exists, e.g. nobody).
+CELERYD_USER="mantis"
+CELERYD_GROUP="mantis"
+
+# If enabled pid and log directories will be created if missing,
+# and owned by the userid/group configured.
+CELERY_CREATE_DIRS=1
+
+# Name of the projects settings module.
+export DJANGO_SETTINGS_MODULE="mantis.settings.local_psql"
+# Names of nodes to start
+#   most will only start one node:
+CELERYD_NODES="worker1"
+
+# Absolute or relative path to the 'celery' command:
+CELERY_BIN="/home/mantis/.virtualenvs/mantis_dev/bin/celery"
+
+# App instance to use
+# comment out this line if you don't use an app
+CELERY_APP="mantis"
+
+# Where to chdir at start.
+CELERYD_CHDIR="/home/mantis/ti/django-mantis"
+
+# Python interpreter from environment.
+ENV_PYTHON="/home/mantis/.virtualenvs/mantis_dev/bin/python"
+
+# How to call "manage.py celeryd_multi"
+CELERYD_MULTI="$ENV_PYTHON $CELERYD_CHDIR/manage.py celeryd_multi"
+
+# How to call "manage.py celeryctl"
+CELERYCTL="$ENV_PYTHON $CELERYD_CHDIR/manage.py celeryctl"
+
+# Name of the celery config module.
+CELERY_CONFIG_MODULE="mantis"
+
+# Extra command-line arguments to the worker
+CELERYD_OPTS="--time-limit=300 --concurrency=8"
+
+# %N will be replaced with the first part of the nodename.
+CELERYD_LOG_FILE="/var/log/celery/%N.log"
+CELERYD_PID_FILE="/var/run/celery/%N.pid"
+
+# Workers should run as an unprivileged user.
+#   You need to create this user manually (or you can choose
+#   a user/group combination that already exists, e.g. nobody).
+CELERYD_USER="mantis"
+CELERYD_GROUP="mantis"
+
+# If enabled pid and log directories will be created if missing,
+# and owned by the userid/group configured.
+CELERY_CREATE_DIRS=1
+
+# Name of the projects settings module.
+export DJANGO_SETTINGS_MODULE="mantis.settings.local_psql"

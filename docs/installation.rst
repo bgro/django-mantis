@@ -9,7 +9,7 @@ Manual installation
 -------------------
 
 The installation instructions below have been tested on an out-of-the-box
-installation of  `Ubuntu Desktop 12.04 LTS`_
+installation of  `Ubuntu Desktop 13.10 LTS`_
 (the Desktop rather than the Server version has been used, since the majority
 of installs are likely to be for testing and developing, where having a full
 working environment and X-server installed comes in handy.) If you are using
@@ -23,7 +23,53 @@ structures such as MITRE's STIX conversion of the
 Mandiant APT-1 report (http://stix.mitre.org/downloads/APT1-STIX.zip) -- 
 importing large files currently takes a lot of memory -- there
 seems to be a memory leak which we still have to track down.
+(*Note*: this may have to do with a known memory leak of Django that
+occurs when ``DEBUG=TRUE`` is set).
 
+#. If you are behind a proxy, use the graphical user interface
+   for setting the proxy (``System Settings > Network``)
+
+#. Make sure that you have ``git`` installed::
+
+       sudo apt-get install git
+
+   If you are behind a proxy, configure to use the proxy::
+
+      git config --global http.proxy $HTTP_PROXY
+      git config --global https.proxy $HTTP_PROXY
+
+
+#. If you have not already done so during installation of the
+   operating system, create a user ``mantis``::
+
+      useradd mantis
+
+   and log in as this user.
+
+#. In  ``/home/mantis``, create a folder ``ti``::
+
+       mkdir /home/mantis/ti 
+       cd /home/mantis/ti 
+
+#. Clone the ``django-mantis`` repository from github and change to
+   the development branch::
+
+      git clone https://github.com/siemens/django-mantis.git
+      cd django-mantis
+      git checkout development
+      cd ..      
+
+#. Copy the installation files to top-level of the ``ti`` directory::
+
+     cp django-mantis/quickstart_files/installation_scripts/*.sh .
+     
+#. Install the required packages::
+
+ 
+
+         
+#. As ``root`` (or with ``root`` authorizations), run the
+   
 
 #. Make sure that you have the required
    dependencies on OS level for building the XML-related packages. For
@@ -187,6 +233,6 @@ ready.)
 
 
 
-.. _Ubuntu Desktop 12.04 LTS: http://www.ubuntu.com/download/desktop
+.. _Ubuntu Desktop 13.10: http://releases.ubuntu.com/13.10/
 
 .. _Vagrant: http://www.vagrantup.com/
