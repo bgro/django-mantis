@@ -310,7 +310,7 @@ INSTALLED_APPS_list = [
 #if USE_DEBUG_TOOLBAR:
 #    INSTALLED_APPS_list.append('debug_toolbar')
 
-INSTALLED_APPS = tuple(INSTALLED_APPS_list)# + ['south'])
+INSTALLED_APPS = tuple(INSTALLED_APPS_list + ['south'])
 
 PROJECT_APPS = ()
 
