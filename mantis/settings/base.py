@@ -1,7 +1,7 @@
 import sys, os, re, tempfile
 from os.path import join, abspath, dirname
 
-from mantis_stix_importer import STIX_OBJECTTYPE_ICON_MAPPING, STIX_OBJECTTYPE_VIEW_MAPPING
+from mantis_stix_importer import STIX_OBJECTTYPE_ICON_MAPPING, STIX_OBJECTTYPE_VIEW_MAPPING, STIX_POSTPROCESSOR_REGISTRY
 
 from django.core.exceptions import ImproperlyConfigured
 
@@ -113,7 +113,10 @@ DINGOS = {
     # We define the mapping of object types to images for the graph view:
     'OBJECTTYPE_ICON_MAPPING': STIX_OBJECTTYPE_ICON_MAPPING,
     # We define the mapping of object types to specialized views
-    'OBJECTTYPE_VIEW_MAPPING': STIX_OBJECTTYPE_VIEW_MAPPING
+    'OBJECTTYPE_VIEW_MAPPING': STIX_OBJECTTYPE_VIEW_MAPPING,
+
+    'SEARCH_POSTPROCESSOR_REGISTRY' : STIX_POSTPROCESSOR_REGISTRY,
+
 
 
 }
