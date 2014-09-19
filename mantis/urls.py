@@ -20,31 +20,6 @@ from django.contrib import admin
 admin.autodiscover()
 
 
-# API Stuff
-from tastypie.api import Api
-from mantis_api_siemens.datasources import IkarusResource, SCDResource, CISOAREResource, CISONICResource, \
-                NICResource, ActiveDirectoryResource, pDNSSiemensResource, pDNSCIRCLResource
-
-from mantis_api.datasources import VirustotalResource, MantisDashboardResource, MantisResource
-
-v1_api = Api(api_name='v1.0')
-
-# Public API
-v1_api.register(VirustotalResource.VirustotalResource())
-v1_api.register(MantisResource.MantisResource())
-v1_api.register(MantisDashboardResource.MantisDashboardResource())
-
-# Private API
-v1_api.register(IkarusResource.IkarusCategoryResource())
-v1_api.register(IkarusResource.IkarusBlockResource())
-v1_api.register(SCDResource.SCDResource())
-v1_api.register(CISOAREResource.CISOAREResource())
-v1_api.register(CISONICResource.CISONICResource())
-v1_api.register(NICResource.NICResource())
-v1_api.register(ActiveDirectoryResource.ActiveDirectoryResource())
-v1_api.register(pDNSSiemensResource.pDNSSiemensResource())
-v1_api.register(pDNSCIRCLResource.pDNSCIRCLResource())
-
 
 urlpatterns = patterns(
     '',
@@ -84,7 +59,8 @@ urlpatterns = patterns(
 
 
     # Our API
-    url(r'^api/', include(v1_api.urls)),
+    url(r'', include('mantis_api.urls')),
+    url(r'', include('mantis_api_siemens.urls')),
 
 
     # OAuth2 Provider URLs
