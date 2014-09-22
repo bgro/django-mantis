@@ -9,7 +9,7 @@ Manual installation
 -------------------
 
 The installation instructions below have been tested on an out-of-the-box
-installation of  `Ubuntu Desktop 13.10 LTS`_
+installation of  `Ubuntu Desktop 13.10`_
 (the Desktop rather than the Server version has been used, since the majority
 of installs are likely to be for testing and developing, where having a full
 working environment and X-server installed comes in handy.) If you are using
@@ -61,13 +61,27 @@ occurs when ``DEBUG=TRUE`` is set).
 
 #. Copy the installation files to top-level of the ``ti`` directory:: 
 
-     cp django-mantis/quickstart_files/install_scripts/*.sh .
-
+     cp django-mantis/quickstart_files/install_scripts/*.sh /home/mantis/ti
 
      
 #. Install the required packages::
+     
+     cd /home/mantis/ti
+     bash 10_install_packages_ubuntu_13_10.sh
 
- 
+#. Configure postgresql::
+
+     cd /home/mantis/ti
+     sudo -i -u postgres
+     bash 20_configure_psql_ubuntu_13_10.sh
+
+#. Create development environment::
+
+     cd /home/mantis/ti
+     bash 30_create_dev_env_ubuntu_13_10.sh
+
+
+
 
          
 #. As ``root`` (or with ``root`` authorizations), run the
