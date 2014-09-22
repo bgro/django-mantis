@@ -18,56 +18,56 @@ git checkout development
 pip install -e .
 cd ..
 
-git clonehttps://github.com/siemens/django-dingos
+git clone https://github.com/siemens/django-dingos.git
 cd django-dingos
 git checkout development
 pip install -e .
 cd ..
 
-git clonehttps://github.com/siemens/django-mantis-core
+git clone https://github.com/siemens/django-mantis-core.git
 cd django-mantis-core
 git checkout development
 pip install -e .
 cd ..
 
-git clonehttps://github.com/siemens/django-mantis-openioc-importer
+git clone https://github.com/siemens/django-mantis-openioc-importer.git
 cd django-mantis-openioc-importer
 git checkout development
 pip install -e .
 cd ..
 
-git clonehttps://github.com/siemens/django-mantis-stix-importer
+git clone https://github.com/siemens/django-mantis-stix-importer.git
 cd django-mantis-stix-importer
 git checkout development
 pip install -e .
 cd ..
 
 
-git clonehttps://github.com/siemens/django-mantis-iodef-importer
+git clone https://github.com/siemens/django-mantis-iodef-importer.git
 cd django-mantis-iodef-importer
 git checkout development
 pip install -e .
 cd ..
 
-git clonehttps://github.com/siemens/django-dingos-authoring
+git clone https://github.com/siemens/django-dingos-authoring.git
 cd django-dingos-authoring
 git checkout development
 pip install -e .
 cd ..
 
-git clonehttps://github.com/siemens/django-mantis-authoring
+git clone https://github.com/siemens/django-mantis-authoring.git
 cd django-mantis-authoring
 git checkout development
 pip install -e .
 cd ..
 
-#git clonehttps://github.com/siemens/django-mantis-dashboard
+#git clone https://github.com/siemens/django-mantis-dashboard.git
 #cd django-mantis-dashboard
 #git checkout development
 #pip install -e .
 #cd ..
 
-#git clonehttps://github.com/siemens/django-mantis-api
+#git clone https://github.com/siemens/django-mantis-api.git
 #cd django-mantis-api
 #git checkout development
 #pip install -e .
@@ -76,19 +76,19 @@ cd ..
 
 # Siemens specific
 
-#git clonehttps://github.com/siemens/django-mantis-api-siemens
+#git clone https://github.com/siemens/django-mantis-api-siemens.git
 #cd django-mantis-api-siemens
 #git checkout development
 #pip install -e .
 #cd ..
 
-#git clonehttps://github.com/siemens/django-mantis-siemens
+#git clone https://github.com/siemens/django-mantis-siemens.git
 #cd django-mantis-siemens
 #git checkout development
 #pip install -e .
 #cd ..
 
-#git clonehttps://github.com/siemens/django-mantis-dataimport-siemens
+#git clone https://github.com/siemens/django-mantis-dataimport-siemens.git
 #cd django-mantis-dataimport-siemens
 #git checkout development
 #pip install -e .
