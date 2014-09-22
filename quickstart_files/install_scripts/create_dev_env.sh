@@ -113,4 +113,4 @@ u = User(username='admin');\
 u.set_password('admin');\
 u.is_superuser = True;\
 u.is_staff = True ;\
-u.save()">
+u.save()"
