@@ -25,8 +25,8 @@ urlpatterns = patterns(
     '',
 
     # Default entry point
-    url(r'^$', lambda x: HttpResponseRedirect('/mantis/dashboard'), name="url.mantis.startpage" ),
-
+    #url(r'^$', lambda x: HttpResponseRedirect('/mantis/dashboard'), name="url.mantis.startpage" ),
+    url(r'^$', HomeView.as_view(), name="url.mantis.startpage" ),
 
     # Grappeli documentation
     (r'^grappelli/', include('grappelli.urls')),
@@ -55,12 +55,12 @@ urlpatterns = patterns(
 
 
     # Include the Siemens Dashboard app
-    url(r'^mantis/dashboard/', include('mantis_dashboard.urls', namespace='mantis_dashboard')),
+    #url(r'^mantis/dashboard/', include('mantis_dashboard.urls', namespace='mantis_dashboard')),
 
 
     # Our API
-    url(r'', include('mantis_api.urls')),
-    url(r'', include('mantis_api_siemens.urls')),
+    #url(r'', include('mantis_api.urls')),
+    #url(r'', include('mantis_api_siemens.urls')),
 
 
     # OAuth2 Provider URLs
