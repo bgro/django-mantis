@@ -99,7 +99,6 @@ cd ..
 cd django-mantis
 pip install -r requirements/testing.txt
 
-python manage.py syncdb --noinput --traceback --settings=mantis.settings.local_psql 
 python manage.py migrate --noinput --traceback --settings=mantis.settings.local_psql
 python manage.py collectstatic --noinput --settings=mantis.settings.local_psql  --trace
 python manage.py mantis_openioc_set_naming --settings=mantis.settings.local_psql  --trace 
