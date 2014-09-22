@@ -62,6 +62,8 @@ occurs when ``DEBUG=TRUE`` is set).
 #. Copy the installation files to top-level of the ``ti`` directory:: 
 
      cp django-mantis/quickstart_files/install_scripts/*.sh .
+
+
      
 #. Install the required packages::
 
