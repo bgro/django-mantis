@@ -6,6 +6,7 @@ from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 from django.http import HttpResponseRedirect
 
+from django.views.generic import RedirectView
 
 # The following import seems to be necessary to have somewhere where
 # it is carried out at an early stage;
@@ -16,7 +17,7 @@ from . import celery
 from .views import MessagingTestView, HomeView
 
 # Uncomment the next two lines to enable the admin:
-from django.contrib import admin
+from django.contrib import admin, auth
 admin.autodiscover()
 
 
@@ -26,7 +27,18 @@ urlpatterns = patterns(
 
     # Default entry point
     #url(r'^$', lambda x: HttpResponseRedirect('/mantis/dashboard'), name="url.mantis.startpage" ),
-    url(r'^$', HomeView.as_view(), name="url.mantis.startpage" ),
+
+    url(r'^mantis/login/?', auth.views.login, kwargs={"template_name":"admin/login.html",
+                                                      "extra_context":{"title":"MANTIS",
+                                                                       "site_title":"MANTIS",
+                                                                       "app_path":""}}, 
+                            name='login'),
+    url(r'^mantis/logout/?', auth.views.logout_then_login, 
+                            name='logout'),
+
+
+
+    url(r'^mantis/?$', HomeView.as_view(), name="url.mantis.startpage" ),
 
     # Grappeli documentation
     (r'^grappelli/', include('grappelli.urls')),

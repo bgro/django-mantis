@@ -137,6 +137,9 @@ if not os.path.isdir(MANTIS_AUTHORING['FILE_CACHE_PATH']):
 
 
 
+LOGIN_REDIRECT_URL = "/mantis"
+
+LOGIN_URL = "/mantis/login"
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
