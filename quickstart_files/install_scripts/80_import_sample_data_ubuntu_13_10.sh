@@ -1,3 +1,4 @@
+
 cd /home/mantis/ti
 mkdir sample_data
 cd sample_data
@@ -27,7 +28,7 @@ cd /home/mantis/ti/django-mantis
 
 source /home/mantis/.virtualenvs/mantis_dev/bin/activate
 
-python manage.py mantis_stix_import /home/ti/sample_data/first2014/F2014.xml --settings=mantis.settings.local_psql
-python manage.py mantis_stix_import /home/ti/sample_data/apt1/Mandiant_APT1_Report.xml --settings=mantis.settings.local_psql
-python manage.py mantis_stix_import /home/ti/sample_data/mitre/*.xml --settings=mantis.settings.local_psql
+python manage.py mantis_stix_import /home/mantis/ti/sample_data/first2014/F2014.xml --settings=mantis.settings.local_psql
+python manage.py mantis_stix_import /home/mantis/ti/sample_data/apt1/Mandiant_APT1_Report.xml --settings=mantis.settings.local_psql
+python manage.py mantis_stix_import /home/mantis/ti/sample_data/mitre/*.xml --settings=mantis.settings.local_psql
 
