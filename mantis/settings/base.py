@@ -4,6 +4,8 @@ from django.core.exceptions import ImproperlyConfigured
 
 from mantis_stix_importer import STIX_OBJECTTYPE_ICON_MAPPING, STIX_OBJECTTYPE_VIEW_MAPPING, STIX_POSTPROCESSOR_REGISTRY
 
+import django
+
 
 def get_env_variable(var_name):
     """ Get the environment variable or return exception """
@@ -125,6 +127,8 @@ DINGOS_AUTHORING = {
    'IMPORTER_REGISTRY' : ( (re.compile("http://stix.mitre.org.*"), "mantis_stix_importer.importer","STIX_Import"),
                            (re.compile("http://cybox.mitre.org.*"), "mantis_stix_importer.importer","STIX_Import"),
                            (re.compile("http://schemas.mandiant.com/2010/ioc"), "mantis_openioc_importer.importer","OpenIOC_Import") ),
+   'DATA_FILESYSTEM_ROOT' : root('authoring', 'imports')
+
 }
 
 # MANTIS authoring specific configuration
@@ -310,7 +314,11 @@ INSTALLED_APPS_list = [
 #if USE_DEBUG_TOOLBAR:
 #    INSTALLED_APPS_list.append('debug_toolbar')
 
-INSTALLED_APPS = tuple(INSTALLED_APPS_list + ['south'])
+
+if django.VERSION < (1,7,0):
+    INSTALLED_APPS = tuple(INSTALLED_APPS_list +  ['south'])
+else:
+    INSTALLED_APPS = tuple(INSTALLED_APPS_list)
 
 PROJECT_APPS = ()
 
