@@ -285,6 +285,9 @@ INSTALLED_APPS_list = [
     'mantis_iodef_importer',
     'mantis_authoring',
 
+    # Siemens specific apps
+    'mantis_siemens',
+
     # Include the Dashboard!
     'mantis_dashboard',
 
