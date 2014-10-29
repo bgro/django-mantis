@@ -16,6 +16,8 @@ from . import celery
 
 from .views import MessagingTestView, HomeView
 
+from dingos_authoring import views as dingos_authoring_views
+
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin, auth
 admin.autodiscover()
@@ -55,6 +57,13 @@ urlpatterns = patterns(
     # MANTIS Urls -- currently, we just take the stuff from DINGOS
     # but that is likely to change soon
     url(r'^mantis/', include('dingos.urls')),
+
+    # Make xml source saved during import accessible
+
+    url(r'^mantis/View/InfoObject/(?P<pk>\d*)/xml/source$',
+        dingos_authoring_views.ImportedXMLView.as_view(),
+        name= "url.dingos_authoring.view.infoobject.xml.source"),
+
 
 
     # Specialized views for STIX/CybOX objects
