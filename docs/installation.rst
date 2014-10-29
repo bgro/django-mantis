@@ -17,14 +17,11 @@ a different *nix flavor, you have to find the corresponding installation
 packages used with ``apt-get`` below -- the installation steps
 carried out with ``pip``, however, will be exactly the same.
 
-*Attention*: If you are setting up a virtual machine, make sure to give
-it at least 3GB of memory if you want to import really large XML
-structures such as MITRE's STIX conversion of the 
-Mandiant APT-1 report (http://stix.mitre.org/downloads/APT1-STIX.zip) -- 
-importing large files currently takes a lot of memory -- there
-seems to be a memory leak which we still have to track down.
-(*Note*: this may have to do with a known memory leak of Django that
-occurs when ``DEBUG=TRUE`` is set).
+*Attention*: When Django's debugging is switched on (``DEBUG=TRUE``),
+there is a memory leak. so, if you are setting up a virtual machine, and want
+to carry out imports of large files with Django's debug 
+setting switched on, make sure to give
+it at least 3GB of memory.
 
 #. If you are behind a proxy, use the graphical user interface
    for setting the proxy (``System Settings > Network``)
@@ -77,12 +74,16 @@ occurs when ``DEBUG=TRUE`` is set).
      exit
      
 #. Create development environment::
+ 
+      bash 30_create_dev_env_ubuntu_13_10.sh
 
-     cd /home/mantis/ti
-     bash 30_create_dev_env_ubuntu_13_10.sh
-     
+#. (Optional): Pull some sample data into the system::
 
+      bash 80_import_sample_data_ubuntu_13_10.sh
 
+#. Start the services (Celery and Django)::
+
+      bash 90_start_services_ubuntu_13_10.sh
 
 .. _Ubuntu Desktop 13.10: http://releases.ubuntu.com/13.10/
 
