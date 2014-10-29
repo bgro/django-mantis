@@ -57,9 +57,9 @@ urlpatterns = patterns(
 
     # Make xml source saved during import accessible
 
-    #url(r'^mantis/View/InfoObject/(?P<pk>\d*)/xml/source$',
-    #    dingos_authoring_views.ImportedXMLView.as_view(),
-    #    name= "url.dingos_authoring.view.infoobject.xml.source"),
+    url(r'^mantis/View/InfoObject/(?P<pk>\d*)/xml/source$',
+        dingos_authoring_views.ImportedXMLView.as_view(),
+        name= "url.dingos_authoring.view.infoobject.xml.source"),
 
 
 
