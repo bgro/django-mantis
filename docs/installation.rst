@@ -27,7 +27,12 @@ setting switched on, make sure to give
 it at least 3GB of memory.
 
 #. If you are behind a proxy, use the graphical user interface
-   for setting the proxy (``System Settings > Network``)
+   for setting the proxy (``System Settings > Network``):
+   set the proxy and apply it system-wide.
+
+   Be sure to open a new terminal for the following steps
+   in order to propagate the proxy information also into
+   the terminal's environment.
 
 #. Make sure that you have ``git`` installed::
 
