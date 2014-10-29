@@ -7,6 +7,8 @@ from django.conf.urls.static import static
 from django.http import HttpResponseRedirect
 
 
+from dingos_authoring import views as dingos_authoring_views
+
 # The following import seems to be necessary to have somewhere where
 # it is carried out at an early stage;
 # otherwise the celery tasks in the apps are not initialized properly.
@@ -52,6 +54,13 @@ urlpatterns = patterns(
     # Include the authoring app and the authoring base (dingos_authoring)
     url(r'^mantis/Authoring/', include('dingos_authoring.urls')),
     url(r'^mantis/Authoring/', include('mantis_authoring.urls')),
+
+    # Make xml source saved during import accessible
+
+    #url(r'^mantis/View/InfoObject/(?P<pk>\d*)/xml/source$',
+    #    dingos_authoring_views.ImportedXMLView.as_view(),
+    #    name= "url.dingos_authoring.view.infoobject.xml.source"),
+
 
 
     # Include the Siemens Dashboard app
