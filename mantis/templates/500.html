@@ -1,7 +1,9 @@
-{% extends "base.html" %}
+{% extends "mantis/grappelli/base.html" %}
 
 {% block title %}Server Error{% endblock %}
 
 {% block content %}
-	<h1>Whoops!</h1>
+<ul class="grp-messagelist">
+  <li class="grp-error"><span class="ui-icon ui-icon-alert"  style="display:inline-block; margin-bottom: -3px; margin-right: 5px;"></span>An internal error occured.</span></li>
+</ul>
 {% endblock content %}

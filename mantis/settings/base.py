@@ -1,9 +1,9 @@
 import sys, os, re, tempfile
 from os.path import join, abspath, dirname
+from django.core.exceptions import ImproperlyConfigured
 
 from mantis_stix_importer import STIX_OBJECTTYPE_ICON_MAPPING, STIX_OBJECTTYPE_VIEW_MAPPING, STIX_POSTPROCESSOR_REGISTRY
 
-from django.core.exceptions import ImproperlyConfigured
 
 def get_env_variable(var_name):
     """ Get the environment variable or return exception """
@@ -25,7 +25,7 @@ root = lambda *x: join(abspath(PROJECT_ROOT), *x)
 sys.path.insert(0, root('apps'))
 
 
-USE_DEBUG_TOOLBAR = True
+USE_DEBUG_TOOLBAR = False
 
 
 
@@ -114,12 +114,9 @@ DINGOS = {
     'OBJECTTYPE_ICON_MAPPING': STIX_OBJECTTYPE_ICON_MAPPING,
     # We define the mapping of object types to specialized views
     'OBJECTTYPE_VIEW_MAPPING': STIX_OBJECTTYPE_VIEW_MAPPING,
-
     'SEARCH_POSTPROCESSOR_REGISTRY' : STIX_POSTPROCESSOR_REGISTRY,
-
-
-
 }
+
 
 # DINGOS authoring specific configuration
 DINGOS_AUTHORING = {
@@ -138,6 +135,9 @@ if not os.path.isdir(MANTIS_AUTHORING['FILE_CACHE_PATH']):
 
 
 
+LOGIN_REDIRECT_URL = "/mantis"
+
+LOGIN_URL = "/mantis/login"
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -277,6 +277,7 @@ INSTALLED_APPS_list = [
     # We use django-simplemenu for displaying menu structures
     'menu',
     # Below, the MANTIS components are installed
+    'mantis',
     'dingos',
     'dingos_authoring',
     'mantis_core',
@@ -284,6 +285,17 @@ INSTALLED_APPS_list = [
     'mantis_stix_importer',
     'mantis_iodef_importer',
     'mantis_authoring',
+
+    # Include the Dashboard!
+    #'mantis_dashboard',
+
+    # Include the django-oauth2-provider
+    'provider',
+    'provider.oauth2',
+
+    # Include the Mantis API
+    #'mantis_api',
+
     #
     # Uncomment below to include TAXII SERVICES and YETI from MITRE's
     # TAXII PoC implementation YETI
@@ -299,7 +311,7 @@ INSTALLED_APPS_list = [
 #if USE_DEBUG_TOOLBAR:
 #    INSTALLED_APPS_list.append('debug_toolbar')
 
-INSTALLED_APPS = tuple(INSTALLED_APPS_list + ['south'])
+INSTALLED_APPS = tuple(INSTALLED_APPS_list)
 
 PROJECT_APPS = ()
 
