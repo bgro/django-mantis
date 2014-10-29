@@ -16,8 +16,8 @@ have a try at the following:
    objects that are in the system 
 
  - Click on one of the displayed packages and start exploring (have a look
-    at the screenshots in the documentation for a quick guide through
-    the application.)
+   at the screenshots in the documentation for a quick guide through
+   the application.)
 
  - You can also have a look at the Django admin interface at::
 

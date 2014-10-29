@@ -10,11 +10,12 @@ of cyber threat intelligence expressed in standards such as `STIX`_, `CybOX`_,
 The heavy lifting is done in the following Django Apps:
 
 - `django-dingos`_
+- `django-dingos-authoring`_
 - `django-mantis-core`_
 - `django-mantis-stix-importer`_
 - `django-mantis-openioc-importer`_
 - `django-mantis-iodef-importer`_
--  django-mantis-taxii (under development)
+- `django-mantis-authoring`_
 
 .. figure:: images/mantis_architecture.PNG
    :align: center
@@ -32,6 +33,8 @@ The heavy lifting is done in the following Django Apps:
 
 .. _django-dingos: https://github.com/siemens/django-dingos/blob/master/docs/what_dingos_is_all_about.rst
 .. _django-mantis-core: https://github.com/siemens/django-mantis-core
+.. _django-dingos-authoring: https://github.com/siemens/django-dingos-authoring
 .. _django-mantis-stix-importer: https://github.com/siemens/django-mantis-stix-importer
 .. _django-mantis-openioc-importer: https://github.com/siemens/django-mantis-openioc-importer
 .. _django-mantis-iodef-importer: https://github.com/siemens/django-mantis-iodef-importer
+.. _django-mantis-authoring: https://github.com/siemens/django-mantis-authoring
