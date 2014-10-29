@@ -1,3 +1,4 @@
+cd /home/mantis/ti
 virtualenv ~/.virtualenvs/mantis_dev
 source ~/.virtualenvs/mantis_dev/bin/activate
 
