@@ -66,7 +66,7 @@ it at least 3GB of memory.
 
 #. Copy the installation files to top-level of the ``ti`` directory:: 
 
-     cp django-mantis/quickstart_files/install_scripts/*.sh /home/mantis/ti
+     cp django-mantis/quickstart_files/install_scripts/*ubuntu_13_10.sh /home/mantis/ti
 
      
 #. Install the required packages::
