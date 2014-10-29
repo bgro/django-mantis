@@ -123,6 +123,7 @@ DINGOS_AUTHORING = {
    'IMPORTER_REGISTRY' : ( (re.compile("http://stix.mitre.org.*"), "mantis_stix_importer.importer","STIX_Import"),
                            (re.compile("http://cybox.mitre.org.*"), "mantis_stix_importer.importer","STIX_Import"),
                            (re.compile("http://schemas.mandiant.com/2010/ioc"), "mantis_openioc_importer.importer","OpenIOC_Import") ),
+   'DATA_FILESYSTEM_ROOT' : root('authoring', 'imports')
 }
 
 # MANTIS authoring specific configuration

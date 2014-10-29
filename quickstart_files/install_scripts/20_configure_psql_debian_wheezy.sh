@@ -7,9 +7,8 @@ echo "Starting server"
 
 echo "Creating database"
 su - postgres -c "psql --command \"CREATE USER mantis WITH PASSWORD 'mantis';\""
-su - postgres -c "psql --command \"ALTER USER mantis CREATEDB;\""
-su - postgres -c "psql --command \"CREATE USER migrator WITH PASSWORD 'migrator';\""
-su - postgres -c "psql --command \"ALTER USER migrator WITH SUPERUSER;\""
+#su - postgres -c "psql --command \"ALTER USER mantis CREATEDB;\""
+su - postgres -c "psql --command \"ALTER USER mantis WITH SUPERUSER;\""
 su - postgres -c "psql --command \"CREATE DATABASE django OWNER mantis ENCODING 'UTF-8';\""
 su - postgres -c "psql --command \"CREATE LANGUAGE plpythonu;\" django"
 
