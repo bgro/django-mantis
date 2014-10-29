@@ -98,7 +98,7 @@ it at least 3GB of memory.
 
 
 Now you can log into the system at  ``127.0.0.1:8000/mantis``
-using the user ``mantis`` with password ``mantis``
+using the user ``admin`` with password ``admin``
 
 
 .. _Ubuntu Desktop 13.10: http://releases.ubuntu.com/13.10/

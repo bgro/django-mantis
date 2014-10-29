@@ -9,6 +9,8 @@ have a try at the following:
    
         127.0.0.1:8000/mantis
 
+   and log in with user ``admin`` and password ``admin``
+
  - Use the menu bar at the top and select the first saved search
    that filters for STIX packages. This will show you all ``STIX_Package``
    objects that are in the system 
