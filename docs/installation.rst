@@ -8,6 +8,9 @@ Installation
 Manual installation
 -------------------
 
+*Note*: What is described below is a quickstart installation, setting
+default passwords both for the database and the Django system, etc.
+
 The installation instructions below have been tested on an out-of-the-box
 installation of  `Ubuntu Desktop 13.10`_
 (the Desktop rather than the Server version has been used, since the majority
@@ -68,10 +71,10 @@ it at least 3GB of memory.
 
 #. Configure postgresql::
 
-     cd /home/mantis/ti
-     sudo -i -u postgres
-     bash /home/mantis/ti/20_configure_psql_ubuntu_13_10.sh
-     exit
+      cd /home/mantis/ti
+      sudo -i -u postgres
+      bash /home/mantis/ti/20_configure_psql_ubuntu_13_10.sh
+      exit
      
 #. Create development environment::
 
@@ -88,5 +91,8 @@ it at least 3GB of memory.
       cd /home/mantis/ti
       bash 90_start_services_ubuntu_13_10.sh
 
+
+Now you can log into the system at  ``127.0.0.1:8000/mantis``
+using the user ``mantis`` with password ``mantis``
 .. _Ubuntu Desktop 13.10: http://releases.ubuntu.com/13.10/
 
