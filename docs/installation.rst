@@ -74,15 +74,18 @@ it at least 3GB of memory.
      exit
      
 #. Create development environment::
- 
+
+      cd /home/mantis/ti
       bash 30_create_dev_env_ubuntu_13_10.sh
 
 #. (Optional): Pull some sample data into the system::
 
+      cd /home/mantis/ti
       bash 80_import_sample_data_ubuntu_13_10.sh
 
 #. Start the services (Celery and Django)::
 
+      cd /home/mantis/ti
       bash 90_start_services_ubuntu_13_10.sh
 
 .. _Ubuntu Desktop 13.10: http://releases.ubuntu.com/13.10/
