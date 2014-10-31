@@ -19,10 +19,11 @@ django-simple-menu>=1.0.9
 
 django-debug-toolbar>=1.2.1
 
-django-dingos>=0.3.0
-django-dingos-authoring>=0.3.0
-django-mantis-core>=0.3.0
-django-mantis-stix-importer>=0.3.0
-django-mantis-openioc-importer>=0.3.0
-django-mantis-iodef-importer>=0.3.0
-django-mantis-authoring>=0.3.0
+django-dingos>=0.3.0,<0.4.0
+django-dingos-authoring>=0.3.0,<0.4.0
+django-mantis-core>=0.3.0,<0.4.0
+django-mantis-stix-importer>=0.3.0,<0.4.0
+django-mantis-openioc-importer>=0.3.0,<0.4.0
+django-mantis-iodef-importer>=0.3.0,<0.4.0
+django-mantis-authoring>=0.3.0<0.4.0
+
