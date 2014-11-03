@@ -47,7 +47,7 @@ it at least 3GB of memory.
 #. If you have not already done so during installation of the
    operating system, create a user ``mantis``::
 
-      useradd mantis
+      sudo useradd mantis
 
    and log in as this user.
 
