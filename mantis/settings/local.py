@@ -8,6 +8,9 @@ from .base import *
 
 DEBUG = True
 
+ALLOWED_HOSTS = ('127.0.0.1',)
+
+
 TEMPLATE_DEBUG = DEBUG
 
 TEMPLATE_STRING_IF_INVALID = "INVALID EXPRESSION: '%s'"
