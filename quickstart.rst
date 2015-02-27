@@ -2,114 +2,74 @@
 QUICKSTART
 ===================================================================================
 
-In the ``django-mantis`` folder, do the following:
-
-- For easy demo usage with SQLite, do::
-
-     (mantis)$ bash quickstart.sh 
-
-  (Note that this uses a SQLite database file located in the ``/tmp`` directory:
-  any imports you do in Mantis will therefore not survive a system restart. 
-  You can move the location of the SQLite database by modifying
-  the line reading ``'/tmp/django-mantis_test.db'`` in ``mantis/settings/local.py``.)
-
-- For usage with exisiting and configured postgresql database, do::
-
-     (mantis)$  bash quickstart_psql 
-
-
-**The script will ask, whether at this stage, you want to create an administrative
-user for Django. Answer with *yes* and provide user name, email address and password**.
-
-In detail, the bash script will do the following:
-
-#) Run the Django ``syncdb`` command, which 
-
-   #) creates tables for the models of all applications that are *not*
-      using the Django `South`_ application for database migrations.
-   #) asks you for user name, email address and password of an administrative Django user
-      (you will need this username and password later to log on)
-
-#) Carry out (initial) database migrations for all MANTIS components
-   using the `South`_ migrations that are part of the components' distribution
-   (in subdirectory ``migrations``)
-
-#) Configure default naming schemata for the exisiting importer modules
-   of MANTIS via calling the command ``mantis_<format>_set_naming`` for
-   each such module
-
-#) Carry out the Django ``collect_static`` command, which copies over
-   the static files for all applications to the ``static`` folder
-   configured in the settings of MANTIS
-
-#) Show you (via the ``less`` command) this file and (after you quit ``less``),
-   print the file to the console
-
-#) Start the testing web server running MANTIS via Django's ``runserver`` command
-   on port 8000.
-
-Then try out the following:
-
-- Download: http://stix.mitre.org/downloads/APT1-STIX.zip and extract the files
-
-- For the files Mandiant_APT1_Report.xml and Appendix_G_IOCs_Full.xml do
-  the following:
-
-  - If you are using sqllite::
-
-      python manage.py mantis_stix_import --settings=mantis.settings.local  --trace\
-          --marking_json=quickstart_examples/markings/minimal_marking.json\
-          --marking_pfill=source "Mandiant APT 1 Report"\
-          <file_path>
-
-  - If you are using postgresql::
-
-      python manage.py mantis_stix_import --settings=mantis.settings.local_psql  --trace\
-          --marking_json=quickstart_examples/markings/minimal_marking.json\
-          --marking_pfill=source "Mandiant APT 1 Report"\
-          <file_path>
-
-  Start with Mandiant_APT1_Report.xml: that goes relatively fast;
-  Appendix_G_IOCs_Full.xml will take about 20 minutes or so to import.
-
-  **ATTENTION**: The import of large files takes quite a bit of memory (probably there is a memory leak
-  somewhere, which will be ironed out in a future release). Be sure to give the system/virtual machine
-  you are running the import of ``Appendix_G_IOCs_Full.xml`` on a fair amount of memory (4 GB definitely
-  works).
-
-
-- Start the server (if the quickstart-script has not started it already for you)
-  with 
-
-  - If you are using sqllite::
-
-      python manage.py runserver 8000 --traceback --settings=mantis.settings.local
-
-  - If you are using postgresql::
-
-      python manage.py runserver 8000 --traceback --settings=mantis.settings.local_psql
+After installing mantis as described in the installation description,
+have a try at the following:
  
  - Browse to::   
    
-        127.0.0.1:8000/mantis/View/InfoObject
+        127.0.0.1:8000/mantis
 
+   and log in with user ``admin`` and password ``admin``
 
-  and start looking around:
+ - Use the menu bar at the top and select the first saved search
+   that filters for STIX packages. This will show you all ``STIX_Package``
+   objects that are in the system 
 
-  - Select a filter for ``stix.mitre.org:STIX_Package``
-    in the filter box in the top-right corner. 
+ - Click on one of the displayed packages and start exploring (have a look
+   at the screenshots in the documentation for a quick guide through
+   the application.)
 
-  - This will show you all ``STIX_Package``
-    objects that are in the system (two, if you imported both ``Mandiant_APT1_Report.xml``
-    and ``Appendix_G_IOC_Full.xml``). 
-
-  - Click on one of the two objects and start
-    exploring (have a look at the screenshots in the documentation for
-    a quick guide through the application.)
-
-  You can also have a look at the Django admin interface at::
+ - You can also have a look at the Django admin interface at::
 
         127.0.0.1:8000/admin
 
+ - If you want to create a STIX report, you first have to
+   add your user to an "authoring group":
 
-.. _South: http://south.readthedocs.org/en/latest/
+   - Go to the admin interface (either via the top-right menu
+     or by browsing to ``127.0.0.1:8000/admin``)
+
+   - Create a Django group (``http://127.0.0.1:8000/admin/auth/group/``), 
+     that will be used as authoring group. For example, name it ``my_organization``
+     and save the group.
+   - Edit your user (``http://127.0.0.1:8000/admin/auth/user/``)
+     and add it to the created group.
+   - Create an identifier namespace (``http://127.0.0.1:8000/admin/dingos/identifiernamespace/``), e.g.,
+     ``my_organization.com``; you can upload an image
+     for that namespace that will later be used when
+     displaying the namespace to the user (e.g., in an
+     object overview).
+
+   - Associate the created namespace with the authoring group by
+     creating a mapping between the two
+     (``http://127.0.0.1:8000/admin/dingos_authoring/groupnamespacemap/``):
+     by chosing the created namespace as default namespace, STIX
+     reports authored via the GUI will be placed in that particular
+     namespace. Adding further namespaces in the mapping as
+     "allowed namespaces" will enable the user to import STIX XML files
+     in one ore more of the allowed namespaces via the GUI.
+
+   Now return from the admin interface to the Mantis pages and chose
+   "New Report" in the Menu "Authoring" and wait for the authoring
+   GUI to load. Once it is loaded, you can do the following:
+
+   - create indicators on the indicator tab
+   - create observables on the observables tab
+   - add relationships between observables on the relationship tab
+   - associate observables with indicators by pulling observables
+     from the bottom right into one of the indicators on the
+     central pane on the STIX package tab.
+  
+   Once you have authored a report, you can import it via
+   the "Import to MANTIS" button. Returning to the overview
+   of reports via the "authoring" menu should show you
+   an entry for the created report and a little magnifying
+   glass next to the word 'Imported' -- pressing on the
+   magnifying glass will take you to the top-level object
+   (the STIX package) resulting from the import.
+
+
+
+
+
+

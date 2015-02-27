@@ -14,8 +14,11 @@ Menu.add_item( "mantis_main",
                                     MenuItem("Edit API Keys", reverse("url.dingos.admin.view.oauthedit"), weight = 20 ),
                                     MenuItem("Edit saved searches", reverse("url.dingos.admin.edit.savedsearches"), weight = 20 ),
                                     MenuItem("Switch Authoring Group", reverse("url.dingos_authoring.action.switch_authoring_group"), weight = 30 ),
+                                    MenuItem("Admin Interface",
+                                             "/admin",
+                                             check = lambda request: request.user.is_superuser),
                                     MenuItem("Log out",
-                                             reverse("admin:logout"),
+                                             reverse("logout"),
                                              weight = 100
                                          )
                         ),

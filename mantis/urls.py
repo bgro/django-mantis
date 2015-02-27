@@ -6,6 +6,7 @@ from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 from django.http import HttpResponseRedirect
 
+from django.views.generic import RedirectView
 
 from dingos_authoring import views as dingos_authoring_views
 
@@ -17,8 +18,10 @@ from . import celery
 
 from .views import MessagingTestView, HomeView
 
+from dingos_authoring import views as dingos_authoring_views
+
 # Uncomment the next two lines to enable the admin:
-from django.contrib import admin
+from django.contrib import admin, auth
 admin.autodiscover()
 
 
@@ -27,8 +30,19 @@ urlpatterns = patterns(
     '',
 
     # Default entry point
-    url(r'^$', lambda x: HttpResponseRedirect('/mantis/dashboard'), name="url.mantis.startpage" ),
+    #url(r'^$', lambda x: HttpResponseRedirect('/mantis/dashboard'), name="url.mantis.startpage" ),
 
+    url(r'^mantis/login/?', auth.views.login, kwargs={"template_name":"admin/login.html",
+                                                      "extra_context":{"title":"MANTIS",
+                                                                       "site_title":"MANTIS",
+                                                                       "app_path":""}}, 
+                            name='login'),
+    url(r'^mantis/logout/?', auth.views.logout_then_login, 
+                            name='logout'),
+
+
+
+    url(r'^mantis/?$', HomeView.as_view(), name="url.mantis.startpage" ),
 
     # Grappeli documentation
     (r'^grappelli/', include('grappelli.urls')),
@@ -45,6 +59,13 @@ urlpatterns = patterns(
     # MANTIS Urls -- currently, we just take the stuff from DINGOS
     # but that is likely to change soon
     url(r'^mantis/', include('dingos.urls')),
+
+    # Make xml source saved during import accessible
+
+    url(r'^mantis/View/InfoObject/(?P<pk>\d*)/xml/source$',
+        dingos_authoring_views.ImportedXMLView.as_view(),
+        name= "url.dingos_authoring.view.infoobject.xml.source"),
+
 
 
     # Specialized views for STIX/CybOX objects
@@ -64,12 +85,12 @@ urlpatterns = patterns(
 
 
     # Include the Siemens Dashboard app
-    url(r'^mantis/dashboard/', include('mantis_dashboard.urls', namespace='mantis_dashboard')),
+    #url(r'^mantis/dashboard/', include('mantis_dashboard.urls', namespace='mantis_dashboard')),
 
 
     # Our API
-    url(r'', include('mantis_api.urls')),
-    url(r'', include('mantis_api_siemens.urls')),
+    #url(r'', include('mantis_api.urls')),
+    #url(r'', include('mantis_api_siemens.urls')),
 
 
     # OAuth2 Provider URLs

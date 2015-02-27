@@ -4,4 +4,3 @@ from .local import *
 # if somebody uses --settings=mantis.settings.local_psql rather
 # than --settings=mantis.settings.local
 
-

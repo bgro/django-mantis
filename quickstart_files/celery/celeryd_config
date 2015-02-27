@@ -8,7 +8,7 @@ ENV_PYTHON="/home/mantis/.virtualenvs/mantis_dev/bin/python"
 
 # Name of the projects settings module.
 # Example: "mantis.settings.local_psql"
-export "mantis.settings.local_psql"
+DJANGO_SETTINGS_MODULE="mantis.settings.local_psql"
 
 # Names of nodes to start
 #   most will only start one node:
