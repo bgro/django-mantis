@@ -138,11 +138,6 @@ if not os.path.isdir(MANTIS_AUTHORING['FILE_CACHE_PATH']):
     os.mkdir(MANTIS_AUTHORING['FILE_CACHE_PATH'])
 
 
-MANTIS_ACTIONABLES = {
-    'SRC_META_DATA_FUNCTION_PATH' : 'mantis_siemens.mantis_actionables_config.create_source_meta_data',
-    'STATUS_UPDATE_FUNCTION_PATH' : 'mantis_siemens.mantis_actionables_config.update_status',
-
-}
 
 
 LOGIN_REDIRECT_URL = "/mantis"
