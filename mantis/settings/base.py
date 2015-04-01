@@ -138,6 +138,12 @@ if not os.path.isdir(MANTIS_AUTHORING['FILE_CACHE_PATH']):
     os.mkdir(MANTIS_AUTHORING['FILE_CACHE_PATH'])
 
 
+MANTIS_ACTIONABLES = {
+    'SRC_META_DATA_FUNCTION_PATH' : 'mantis_siemens.mantis_actionables_config.create_source_meta_data',
+    'STATUS_UPDATE_FUNCTION_PATH' : 'mantis_siemens.mantis_actionables_config.update_status',
+
+}
+
 
 LOGIN_REDIRECT_URL = "/mantis"
 
@@ -278,6 +284,9 @@ INSTALLED_APPS_list = [
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
+
+    'taggit',
+    'autocomplete_light',
     # We use django-simplemenu for displaying menu structures
     'menu',
     # Below, the MANTIS components are installed
@@ -290,8 +299,8 @@ INSTALLED_APPS_list = [
     'mantis_iodef_importer',
     'mantis_authoring',
 
-    # Siemens specific apps
-    'mantis_siemens',
+    'mantis_actionables',
+    'mantis_malte',
 
     # Include the Dashboard!
     #'mantis_dashboard',
@@ -319,10 +328,8 @@ INSTALLED_APPS_list = [
 #    INSTALLED_APPS_list.append('debug_toolbar')
 
 
-if django.VERSION < (1,7,0):
-    INSTALLED_APPS = tuple(INSTALLED_APPS_list +  ['south'])
-else:
-    INSTALLED_APPS = tuple(INSTALLED_APPS_list)
+
+INSTALLED_APPS = tuple(INSTALLED_APPS_list)
 
 PROJECT_APPS = ()
 
@@ -383,6 +390,18 @@ CELERY_RESULT_BACKEND='djcelery.backends.database:DatabaseBackend'
 
 BROKER_URL = 'amqp://guest:guest@localhost:5672//'
 
+
+# Cache
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    },
+    'caching_manager': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'TIMEOUT': 1
+    },
+}
 
 
 

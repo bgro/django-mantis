@@ -87,6 +87,11 @@ urlpatterns = patterns(
     # Include the Siemens Dashboard app
     #url(r'^mantis/dashboard/', include('mantis_dashboard.urls', namespace='mantis_dashboard')),
 
+    #
+    url(r'^mantis/actionables/', include('mantis_actionables.urls')),
+url(r'^mantis/malte/', include('mantis_malte.urls')),
+
+
 
     # Our API
     #url(r'', include('mantis_api.urls')),
