@@ -26,13 +26,24 @@ Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
   {% load menu %}
   {% generate_menu %}
 
-
 <div style="float: left; margin: 0 10px;">
-  <form action={% url "url.dingos.search.fact.simple" %} method="GET">
+  {% url "url.dingos.search.fact.simple" as dingos_search_url %}
+  {% url "actionables_unified_search" search_term='' as actionables_search_url %}
+  {% if actionables_search_url %}
+  <form action="{{ actionables_search_url }}" method="GET">
+    <input type="text" name="search_term" placeholder="Search" style="margin-top: 5px; width: 140px"/>
+  </form>
+  {% else %}
+  <form action="{{ dingos_search_url }}" method="GET">
     <input type="text" name="fact__fact_values__value" placeholder="Search" style="margin-top: 5px; width: 140px"/>
   </form>
+
+
+  {% endif %}
+
 </div>
 
+  
 
 <ul id="grp-user-tools">
     {% if menus.mantis_main %}
