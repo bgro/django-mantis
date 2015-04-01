@@ -89,7 +89,7 @@ urlpatterns = patterns(
 
     #
     url(r'^mantis/actionables/', include('mantis_actionables.urls')),
-url(r'^mantis/malte/', include('mantis_malte.urls')),
+    url(r'^mantis/', include('mantis_malte.urls')),
 
 
 
