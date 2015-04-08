@@ -1,11 +1,11 @@
 cd /home/mantis/ti
 virtualenv ~/.virtualenvs/mantis_dev
 source ~/.virtualenvs/mantis_dev/bin/activate
-your_proxy=YOURPROXY:PORT
+#your_proxy=YOURPROXY:PORT
 wget http://xmlsoft.org/sources/libxml2-2.9.1.tar.gz
 tar -zxvf libxml2-2.9.1.tar.gz
 cd libxml2-2.9.1/python
-(pip install -e . --proxy=$your_proxy 2>&1) | tee -a /home/mantis/ti/install.log
+(pip install . --proxy=$your_proxy 2>&1) | tee -a /home/mantis/ti/install.log
 cd ../..
 rm -r libxml2-2.9.1
 
