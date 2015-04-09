@@ -1,19 +1,20 @@
 cd /home/mantis/ti
-virtualenv ~/.virtualenvs/mantis_test
+virtualenv ~/.virtualenvs/mantis_dev
 source ~/.virtualenvs/mantis_dev/bin/activate
-your_proxy=YOURPROXY:PORT
+#your_proxy=YOURPROXY:PORT
 wget http://xmlsoft.org/sources/libxml2-2.9.1.tar.gz
 tar -zxvf libxml2-2.9.1.tar.gz
-pip install libxml2-2.9.1/python
+cd libxml2-2.9.1/python
+(pip install . --proxy=$your_proxy 2>&1) | tee -a /home/mantis/ti/install.log
+cd ../..
 rm -r libxml2-2.9.1
-
-(pip install -e . --proxy=$your_proxy 2>&1) | tee -a /home/mantis/ti/install.log
 
 git clone https://github.com/CybOXProject/python-cybox.git
 cd python-cybox
 git fetch --tags
 git checkout v2.1.0.10
 (pip install -e . --proxy=$your_proxy 2>&1) | tee -a /home/mantis/ti/install.log
+cd ..
 
 git clone https://github.com/STIXProject/python-stix.git
 cd python-stix
@@ -65,12 +66,11 @@ git checkout development
 (pip install -e . --proxy=$your_proxy 2>&1) | tee -a /home/mantis/ti/install.log
 cd ..
 
-git clone https://github.com/siemens/django-mantis-api.git
-cd django-mantis-api
-git checkout development
-(pip install -e . --proxy=$your_proxy 2>&1) | tee -a /home/mantis/ti/install.log
-cd ..
-
+#git clone https://github.com/siemens/django-mantis-api.git
+#cd django-mantis-api
+#git checkout development
+#(pip install -e . --proxy=$your_proxy 2>&1) | tee -a /home/mantis/ti/install.log
+#cd ..
 
 #git clone https://github.com/siemens/django-mantis-api-siemens.git
 #cd django-mantis-api-siemens

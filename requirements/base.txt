@@ -22,6 +22,4 @@ django-mantis-core>=0.3.0,<0.4.0
 django-mantis-stix-importer>=0.3.0,<0.4.0
 django-mantis-openioc-importer>=0.3.0,<0.4.0
 django-mantis-iodef-importer>=0.3.0,<0.4.0
-django-mantis-authoring>=0.3.0<0.4.0
 django-mantis-authoring>=0.3.0,<0.4.0
-
