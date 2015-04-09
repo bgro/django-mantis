@@ -1,14 +1,13 @@
+#!/bin/bash
+if [[ $EUID -ne 0 ]]; then
+   echo "This script must be run as root" 1>&2
+   exit 1
+fi
 echo "Starting server"
-sudo /etc/init.d/postgresql start 
-echo "Creating mantis user"
-sudo -u postgres psql --command "CREATE USER mantis WITH PASSWORD 'mantis';"
-#sudo -u postgres psql --command "ALTER USER mantis CREATEDB;"
-sudo -u postgres psql --command "ALTER USER mantis WITH SUPERUSER;"
-echo "Create Database"
-sudo -u postgres psql --command "CREATE DATABASE django OWNER mantis ENCODING 'UTF-8';"
-echo "Create language"
-sudo -u postgres psql --command "CREATE LANGUAGE plpythonu;" django
+/etc/init.d/postgresql start 
+echo "Initialize database."
+su postgres -c "psql -f init_postgres.sql"
 echo "Modifying postgres configuration."
-echo "host all  all    0.0.0.0/0  md5" | sudo tee -a /etc/postgresql/9.4/main/pg_hba.conf
+echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/9.4/main/pg_hba.conf
 
 
