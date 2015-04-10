@@ -72,17 +72,17 @@ it at least 3GB of memory.
 #. Install the required packages::
      
      cd /home/mantis/ti
-     bash 10_install_packages_ubuntu_14_04.sh
+     sudo bash 10_install_packages_ubuntu_14_04.sh
 
 #. Configure postgresql::
 
       cd /home/mantis/ti
-      bash /home/mantis/ti/20_configure_psql_ubuntu_14_04.sh
+      sudo bash /home/mantis/ti/20_configure_psql_ubuntu_14_04.sh
      
 #. Create development environment::
 
       cd /home/mantis/ti
-      bash 30_create_dev_env_ubuntu_14_04.sh
+      sudo bash 30_create_dev_env_ubuntu_14_04.sh
 
 #. Start the services (Celery and Django)::
 
