@@ -82,7 +82,7 @@ it at least 3GB of memory.
 #. Create development environment::
 
       cd /home/mantis/ti
-      sudo bash 30_create_dev_env_ubuntu_14_04.sh
+      bash 30_create_dev_env_ubuntu_14_04.sh
 
 #. Start the services (Celery and Django)::
 
