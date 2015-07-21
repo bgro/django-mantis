@@ -12,7 +12,7 @@ Manual installation
 *ATTENTION*: Please do not use the master branch for fresh installs; use the development branch
 and follow the installation instructions outlined `in the development branch`_
 
-.. _in the development branch: http://django-mantis.readthedocs.org/en/development/
+.. _in the development branch: http://django-mantis.readthedocs.org/en/development/installation.html
 
 
 The installation instructions below have been tested on an out-of-the-box
