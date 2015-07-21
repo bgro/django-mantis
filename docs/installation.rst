@@ -61,7 +61,7 @@ it at least 3GB of memory.
 
       git clone https://github.com/siemens/django-mantis.git
       cd django-mantis
-      git checkout development_0_4_0
+      git checkout development
       cd ..      
 
 #. Copy the installation files to top-level of the ``ti`` directory:: 
