@@ -2,6 +2,10 @@
 The MANTIS Cyber Threat Intelligence Management Framework
 =========================================================
 
+**NOTE**: Mantis is not maintained anymore: by now, the excellent `MISP`_ platform
+offers all the functionality (and much more) that had been required when
+MANTIS was created but could then not be found in any other tool.
+
 The MANTIS (Model-based Analysis of Threat Intelligence Sources) Framework consists
 of several `Django`_ Apps that, in combination, support the management
 of cyber threat intelligence expressed in standards such as `STIX`_, `CybOX`_,
@@ -75,5 +79,5 @@ was generated with Audrey Roy's excellent `Cookiecutter`_ and Marco Fucci's `coo
 .. _Mantis Github Repository: https://github.com/siemens/django-mantis
 .. _Mantis Issue Tracker: https://github.com/siemens/django-mantis/issues?state=open
 
-
+.. _MISP: http://www.misp-project.org/
 
