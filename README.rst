@@ -2,9 +2,9 @@
 The MANTIS Cyber Threat Intelligence Management Framework
 =========================================================
 
-**NOTE**: Mantis is not maintained anymore: by now, the excellent `MISP`_ platform
+**WARNING: Mantis is not maintained anymore: by now, the excellent `MISP`_ platform
 offers all the functionality (and much more) that had been required when
-MANTIS was created but could then not be found in any other tool.
+MANTIS was created but could then not be found in any other tool.**
 
 The MANTIS (Model-based Analysis of Threat Intelligence Sources) Framework consists
 of several `Django`_ Apps that, in combination, support the management
